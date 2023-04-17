@@ -3,6 +3,7 @@
 import login from './lib/Pages/login/login.js';
 import publicar from './lib/Pages/publicar/publicar.js';
 import cadastro from './lib/Pages/cadastro/cadastro.js';
+import feed from './lib/Pages/feed/feed.js';
 
 const main = document.querySelector('#root');
 
