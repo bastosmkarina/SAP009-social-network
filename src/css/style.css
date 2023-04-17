@@ -1,0 +1,11 @@
+@import url(../lib/Pages/login/login.css);
+@import url(../lib/Pages/feed/feed.css);
+@import url(../lib/Pages/cadastro/cadastro.css);
+@import url(../lib/Pages/publicar/publicar.css);
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
