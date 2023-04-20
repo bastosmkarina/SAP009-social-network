@@ -2,7 +2,7 @@ export default () => {
   const formCadastro = document.createElement('div');
   const template = `  
       <section>   
-    <h1>iorkut</h1>    
+    
       <h2>Cadastro</h2> 
        <form class='cadastrar'> 
      <label for='Nome Completo'>  
