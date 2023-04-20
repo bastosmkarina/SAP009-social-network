@@ -2,7 +2,7 @@ export default () => {
   const container = document.createElement('div');
   const template = `
   
-  <img src='./lib/Pages/imagens/LogoAirFryer.png' class='logo'>
+  
   <nav class='menu-hamburguer'>
   <ul>
   <li>

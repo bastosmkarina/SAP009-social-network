@@ -17,3 +17,20 @@ body{
     font-style:normal;
 }
 
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    max-width:100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 3px;
+}
+
+h1{
+    color: magenta;
+}
+
+
+
