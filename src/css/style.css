@@ -1,0 +1,36 @@
+@import url(../lib/Pages/login/login.css);
+@import url(../lib/Pages/feed/feed.css);
+@import url(../lib/Pages/cadastro/cadastro.css);
+@import url(../lib/Pages/publicar/publicar.css);
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #F0F8FF;
+    /* justify-content: center; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
+    font-style:normal;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    max-width:100px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    border: 3px;
+}
+
+h1{
+    color: magenta;
+}
+
+
+

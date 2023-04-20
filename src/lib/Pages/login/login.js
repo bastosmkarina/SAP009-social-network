@@ -1,8 +1,8 @@
 export default () => {
   const container = document.createElement('div');
   const template = `
- <h1> iorkut </h1>
- <p> Faça parte da maior comunidade da AirFryer</p>
+ 
+ <p> Sua comunidade de trocas de receitas para Air Fryer</p>
  <form id='login'>
  <p>Acesse</p>
  <label for='email'>
