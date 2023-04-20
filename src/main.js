@@ -1,5 +1,3 @@
-// Este es el punto de entrada de tu aplicacion
-
 import login from './lib/Pages/login/login.js';
 import publicar from './lib/Pages/publicar/publicar.js';
 import cadastro from './lib/Pages/cadastro/cadastro.js';

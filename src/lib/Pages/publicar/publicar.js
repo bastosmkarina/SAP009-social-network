@@ -1,10 +1,7 @@
 export default () => {
   const container = document.createElement('div');
   const template = `
-   
- <h1> iorkut </h1>
- 
- <img src='./lib/Pages/imagens/LogoAirFryer.png' class='logo'>
+
  <section class='textos'>
  <p id='comunidade'> Comunidade Receitas Air Fryer</p>
  <div class='descriçao'>
