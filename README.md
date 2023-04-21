@@ -12,6 +12,8 @@ Funcionalidades:
 - Criar postagens de texto, curtir, editar e excluir;
 - Navegar entre as páginas.
 
+<img src="src/images/readme/logo-iorkut.png">
+
 ## Índice
 
 * [1. Prefácio](#1-prefácio)
