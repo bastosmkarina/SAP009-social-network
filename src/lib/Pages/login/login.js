@@ -1,3 +1,5 @@
+import { login } from '../../firebaseServices/firebaseAuth.js';
+
 export default () => {
   const container = document.createElement('div');
   const template = `
@@ -12,7 +14,7 @@ export default () => {
  <input type ='password' autocomplete='current-password'name='password' id='senha-login' placeholder='Senha'> <br>
  </label>
  <label for='submit-login'>
- <button type='submit' value='Submit' id='button'>Entrar</button> </label> <br>
+ <button type='submit' value='Submit' id='s'>Entrar</button> </label> <br>
  <label for='login-google'>
  <button type='submit' value='Login-Google' id='btn-google'> Entrar com Google</button>
  <p> Novo por aqui? Crie agora sua conta! <p>
@@ -20,5 +22,23 @@ export default () => {
  </form>
 `;
   container.innerHTML = template;
+
+  const botaoLogin = container.querySelector('#submit-login');
+  botaoLogin.addEventListener ('click', () => {
+    const email = document.getElementById('email-login');
+    const senha = document.getElementById('senha-login');
+    login(email.value, senha.value);
+    .then(() => {
+      window.location.hash = '#feed';
+    })
+      .catch((error) => {
+        if(error.message === 'Firebase: Error (auth/user-not-found).') {
+          alert('Usuário não encontrado');
+        } else if (error.message === 'Firebase: Error (auth/wrong-password).') {
+          alert('Senha incorreta'); 
+        }
+      });
+      
+  });
+}
   return container;
-};
