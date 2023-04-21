@@ -25,6 +25,11 @@ createUserWithEmailAndPassword(Auth, email, password)
 
 export const login = (email, senha) => signInWithEmailAndPassword(Auth, email, senha);
 
+
+
+
+
+
 export const googleLogin = () => {
   const provider = new GoogleAuthProvider();
   return signInWithPopup(Auth, provider);

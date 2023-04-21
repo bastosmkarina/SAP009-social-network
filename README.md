@@ -1,4 +1,16 @@
-# Criando uma Rede Social
+# iorkut - comunidade de receitas de airfryer
+
+<b>Acesse o link do projeto aqui: "colocar link deploy"</b>
+
+Terceiro projeto realizado durante o Bootcamp da Laboratória. O objetivo principal alcançado foi desenvolver uma rede social SPA responsiva, partindo do principio do conceito de Mobile first.  
+
+Tema: iorkut - comunidade de receitas de airfyer, um alinhamento entre a nostalgia da antiga rede social Orkut, suas comunidades e uma rede para interações e trocas de receitas para o utensílio Airfyer.  
+
+Funcionalidades:
+
+- Criar conta com login e senha ou Google, autenticados pelo Firebase;
+- Criar postagens de texto, curtir, editar e excluir;
+- Navegar entre as páginas.
 
 ## Índice
 
