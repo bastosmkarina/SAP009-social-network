@@ -12,12 +12,11 @@
 
 body{
     background: #F0F8FF;
-    /* justify-content: center; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana;
-    font-style:normal;
+    font-style: normal;
 }
 
-.logo{
+.logo {
     display: flex;
     justify-content: flex-start;
     max-width:100px;
@@ -27,9 +26,22 @@ body{
     padding: 8px;
     border: 3px;
 }
-
+    
 h1{
-    color: magenta;
+    color: rgb(246, 140, 246);
+    text-align: center;
+}
+
+.footer {
+    background-color: rgb(246, 140, 246);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer p {
+    text-align: center;
 }
 
 
