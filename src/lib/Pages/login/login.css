@@ -1,0 +1,16 @@
+.login {
+  text-align: center;
+}
+
+.primeiro-texto-login {
+  text-align: center;
+  font-weight: bold;
+}
+
+.login-botao {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color:rgb(231, 137, 255);
+}
