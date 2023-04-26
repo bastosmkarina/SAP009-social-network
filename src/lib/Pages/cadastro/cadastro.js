@@ -4,6 +4,7 @@ export default () => {
       <section>   
     
       <h2>Cadastro</h2> 
+      <div>
        <form class='cadastrar'> 
      <label for='Nome Completo'>  
      <input type='text' id='Nome-Completo' placeholder='Nome Completo'>  
@@ -17,6 +18,7 @@ export default () => {
      <label for='senha'> 
      <input type='password' id='senha' placeholder='Senha'> 
      </label>  
+     </div>
     <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
     </form>    `;
   formCadastro.innerHTML = template;

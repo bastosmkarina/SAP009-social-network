@@ -28,8 +28,10 @@ export default () => {
       window.location.hash = '#feed';
     } catch (error) {
       if (error.code === 'auth/user-not-found') {
+        // eslint-disable-next-line no-alert
         alert('Usuário não encontrado');
       } else if (error.code === 'auth/wrong-password') {
+        // eslint-disable-next-line no-alert
         alert('Senha incorreta');
       }
     }
@@ -43,6 +45,7 @@ export default () => {
       })
       // eslint-disable-next-line no-unused-vars
       .catch((error) => {
+        // eslint-disable-next-line no-alert
         alert('Erro ao efetuar login com o Google!');
       });
   });
