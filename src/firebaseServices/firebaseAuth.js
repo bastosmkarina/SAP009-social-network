@@ -1,9 +1,10 @@
 import {
   getAuth,
-  // createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from 'firebase/auth';
 
 import { app } from '../firebaseInit.js';
@@ -17,15 +18,9 @@ export const logingoogle = () => {
   return signInWithPopup(firebaseauth, authprovider);
 };
 
-// export const criarUsuario = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-// });
+// eslint-disable-next-line max-len
+export const criarUsuario = (nomeCompleto, Apelido, email, senha) => createUserWithEmailAndPassword(firebaseauth, email, senha)
+  .then((userCredential) => {
+    const usuario = userCredential.user;
+    return updateProfile(usuario, { nomeCompleto, Apelido });
+  });
