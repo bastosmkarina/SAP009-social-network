@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
 
 export default () => {
@@ -43,12 +44,13 @@ export default () => {
     const email = container.querySelector('#email');
     const senha = container.querySelector('#senha');
     if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
+      // eslint-disable-next-line no-alert
       alert('Por favor, preencha todos os campos.');
     } else {
-      criarUsuario(email.value, senha.value, nomeCompleto.value, apelido.value)
+      criarUsuario(nomeCompleto.value, apelido.value, email.value, senha.value)
         .then(() => {
           alert('Cadastro realizado com sucesso!');
-          window.location.hash = '#login';
+          window.location.hash = '#feed';
         })
         .catch((error) => {
           const mensagem = container.querySelector('#txtError');
@@ -59,27 +61,3 @@ export default () => {
 
   return container;
 };
-
-// const cadastro = container.querySelector('#confirmar');
-  //cadastro.addEventListener('click', () => {
-   // const nomeCompleto = container.querySelector('#Nome-Completo');
-   // const apelido = container.querySelector('#Apelido');
-   // const email = container.querySelector('#email');
-   // const senha = container.querySelector('#senha');
-   // if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
-     // alert('Por favor, preencha todos os campos.');
-    //} else {
-      //criarUsuario(email.value, senha.value, nomeCompleto.value, apelido.value)
-       // .then(() => {
-          // eslint-disable-next-line no-alert
-        //  alert('Cadastro realizado com sucesso!');
-         // window.location.hash = '#login';
-       // })
-       // .catch((error) => {
-        //  const mensagem = container.querySelector('#txtError');
-         // mensagem.innerHTML = errorMessage(error);
-       // });
-    //}
-  //});
-
-  //return container;};

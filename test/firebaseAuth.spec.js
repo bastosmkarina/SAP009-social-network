@@ -4,7 +4,7 @@ import {
   signInWithPopup,
 } from 'firebase/auth';
 
-import { firebaseauth, login, logingoogle } from '../src/firebaseServices/firebaseAuth';
+import { auth, login, logingoogle } from '../src/firebaseServices/firebaseAuth';
 
 jest.mock('firebase/auth');
 
@@ -21,7 +21,7 @@ describe('login', () => {
     await login(email, senha);
 
     expect(signInWithEmailAndPassword).toHaveBeenCalledTimes(1);
-    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(firebaseauth, email, senha);
+    expect(signInWithEmailAndPassword).toHaveBeenCalledWith(auth, email, senha);
   });
 });
 
@@ -43,6 +43,6 @@ describe('logingoogle', () => {
 
     expect(GoogleAuthProvider).toHaveBeenCalledTimes(1);
     expect(signInWithPopup).toHaveBeenCalledTimes(1);
-    expect(mockSignInWithPopup).toHaveBeenCalledWith(firebaseauth, new GoogleAuthProvider());
+    expect(mockSignInWithPopup).toHaveBeenCalledWith(auth, new GoogleAuthProvider());
   });
 });
