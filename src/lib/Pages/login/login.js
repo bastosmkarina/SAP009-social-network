@@ -14,7 +14,7 @@ export default () => {
  <p> Se preferir, entre com sua conta Google: </p>
  <button type='button' id='google-botao' class='google-botao'><i class="fab fa-google"></i></button>
  <p> Novo por aqui? Crie agora sua conta! <p>
- <button type='button' class='cadastro-botao' id='cadastro-botao'> Cadastrar </button>
+ <a href='#cadastro'><button type='button' class='cadastro-botao' id='cadastro-botao'> Cadastrar </button></a>
  </form>
 `;
   container.innerHTML = template;

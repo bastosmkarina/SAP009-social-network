@@ -1,31 +1,26 @@
 import {
   getAuth,
-  // createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  updateProfile,
 } from 'firebase/auth';
 
 import { app } from '../firebaseInit.js';
 
-export const firebaseauth = getAuth(app);
+export const auth = getAuth(app);
 
-export const login = (email, senha) => signInWithEmailAndPassword(firebaseauth, email, senha);
+export const login = (email, senha) => signInWithEmailAndPassword(auth, email, senha);
 
 export const logingoogle = () => {
   const authprovider = new GoogleAuthProvider();
-  return signInWithPopup(firebaseauth, authprovider);
+  return signInWithPopup(auth, authprovider);
 };
 
-// export const criarUsuario = getAuth();
-// createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-// });
+// eslint-disable-next-line max-len
+export const criarUsuario = (nomeCompleto, Apelido, email, senha) => createUserWithEmailAndPassword(auth, email, senha)
+  .then((userCredential) => {
+    const usuario = userCredential.user;
+    return updateProfile(usuario, { nomeCompleto, Apelido });
+  });
