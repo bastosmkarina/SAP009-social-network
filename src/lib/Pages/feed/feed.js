@@ -6,41 +6,29 @@ export default () => {
   <nav class='menu-hamburguer'>
   <ul>
   <li>
-  <a href='/#publicar'>Home</a>
-  </li>
-  <li>
-  <a href='/#feed'>Publicações</a>
-  </li>
-  <li>
   <a href='/#login'>Sair</a>
-  
   </li>
   </u>
   </nav>
 
+  <div class='descriçao'>
+  <p> Comunidade feita para todas as pessoas que amam a praticidade de suas Air Fryers<p>
+  <p> Compatilhe e tenha acesso as mais variadas receitas<p> 
+  </div>
+  </section> 
+ 
+  <textarea id='escrever-receita' name='publicar' rows='10' cols='45' placeholder='Publique aqui sua receita'>
+  </textarea> 
+  <div>
+  <button type='submit' value='Submit' id='btn-Publicar'>Publicar</button> </label>
+
   <div class='container'>
   
-  <p>Publicações</p>
-
   <span>Apelido</span>
   <div class='postagens'></div>
   <i class='fa-regular fa-heart'></i>
   <i class='fa-regular fa-pen-to-square'></i>
   <i class='fa-regular fa-trash-can'></i>
-
-  <span>Apelido</span>
-  <div class='postagens'></div>
-  <i class='fa-regular fa-heart'></i>
-  <i class='fa-regular fa-pen-to-square'></i>
-  <i class='fa-regular fa-trash-can'></i>
-
-  <span>Apelido</span>
-  <div class='postagens'></div>
-  <i class='fa-regular fa-heart'></i>
-  <i class='fa-regular fa-pen-to-square'></i>
-  <i class='fa-regular fa-trash-can'></i>
-  </div>
-
   `;
   container.innerHTML = template;
   return container;
