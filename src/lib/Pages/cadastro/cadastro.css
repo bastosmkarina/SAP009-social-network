@@ -1,0 +1,9 @@
+
+.menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 200px;
+    margin-left: 200px;
+    margin-top: -130px;
+  }
