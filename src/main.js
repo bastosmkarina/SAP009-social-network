@@ -11,10 +11,10 @@ const init = () => {
       case '':
         main.appendChild(login());
         break;
-      case '#feed':
+      case '#cadastro':
         main.appendChild(feed());
         break;
-      case '#cadastro':
+      case '#feed':
         main.appendChild(cadastro());
         break;
 
