@@ -4,27 +4,18 @@ import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
 export default () => {
   const container = document.createElement('div');
   const template = `  
-      <section>   
     
-      <h2>Cadastro</h2> 
-      <div>
-       <form class='cadastrar'> 
-     <label for='Nome Completo'>  
-     <input type='text' id='Nome-Completo' placeholder='Nome Completo'>  
-     </label>  
-     <label for='apelido'>  
-    <input type='text' id='Apelido' placeholder='Apelido'> 
-      </label> 
-      <label for='email'>  
-    <input type='email' id='email' placeholder='Email'> 
-     </label>  
-     <label for='senha'> 
-     <input type='password' id='senha' placeholder='Senha'> 
-     </label>  
-     </div>
-    <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
-    <span class='txt-error hide' id='txtError'></span>
-    </form>    `;
+     <form class='formulario-cadastro'> 
+     <p class='nome-formulario-cadastro'>Cadastro</p> 
+     <input type='text' id='Nome-Completo' placeholder='Nome Completo'>
+     <input type='text' id='Apelido' placeholder='Apelido'> 
+     <input type='email' id='email' placeholder='Email'> 
+     <input type='password' id='senha' placeholder='Senha'>
+     <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
+     <span class='txt-error hide' id='txtError'></span>
+     </form>    
+     `;
+
   container.innerHTML = template;
   function errorMessage(error) {
     if (error.code === 'auth/email-already-exists') {

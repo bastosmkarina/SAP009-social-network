@@ -2,8 +2,6 @@
 @import url(../lib/Pages/cadastro/cadastro.css);
 @import url(../lib/Pages/feed/feed.css);
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +24,3 @@ body{
 .footer p {
     text-align: center;
 }
-
-
-

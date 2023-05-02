@@ -5,8 +5,9 @@ export default () => {
 
   const template = `
  
- <p class='primeiro-texto-login'> Sua comunidade de trocas de receitas para Air Fryer </p>
- <form id='login' class='login'>
+ <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
+ <p class='frase2-login'>para Air Fryer</p>
+ <form id='login' class='formulario-login'>
  <p> Acesse: </p>
  <input type ='email' name ='email' id='email-login' placeholder='Email' autocomplete=''> <br>
  <input type ='password' name='password' id='senha-login' placeholder='Senha' autocomplete='current-password'> <br>
