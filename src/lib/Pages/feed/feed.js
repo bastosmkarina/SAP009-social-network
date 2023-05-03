@@ -2,30 +2,16 @@ export default () => {
   const container = document.createElement('div');
   const template = `
   
-  
-  <nav class='menu-hamburguer'>
-  <ul>
-  <li>
-  <a href='/#login'>Sair</a>
-  </li>
-  </u>
-  </nav>
-
-  <div class='descriçao'>
-  <p> Comunidade feita para todas as pessoas que amam a praticidade de suas Air Fryers<p>
-  <p> Compatilhe e tenha acesso as mais variadas receitas<p> 
-  </div>
-  </section> 
- 
-  <textarea id='escrever-receita' name='publicar' rows='10' cols='45' placeholder='Publique aqui sua receita'>
-  </textarea> 
-  <div>
-  <button type='submit' value='Submit' id='btn-Publicar'>Publicar</button> </label>
-
-  <div class='container'>
-  
-  <span>Apelido</span>
-  <div class='postagens'></div>
+  <p class='titulo-feed'>Eu amo a minha Air Fryer!</p>
+  <p class='membros'>(10.371 membros)<p/>
+  <p class='texto-comunidade'>Comunidade feita para todas as pessoas que amam a praticidade de suas Air Fryers</p>
+  <section class='caixa-publicar'>
+  <p class='texto-compartilhe'>Compatilhe e tenha acesso as mais variadas receitas</p> 
+  <textarea id='escrever-receita' name='publicar' rows='5' cols='40' placeholder='Publique aqui sua receita'></textarea> 
+  <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
+  </section>
+  <p class='apelido'>Apelido</p>
+  <section class='postagens'></section>
   <i class='fa-regular fa-heart'></i>
   <i class='fa-regular fa-pen-to-square'></i>
   <i class='fa-regular fa-trash-can'></i>
@@ -33,3 +19,15 @@ export default () => {
   container.innerHTML = template;
   return container;
 };
+
+/*
+<nav class='menu-hamburguer'>
+<ul>
+<li>
+<a hrrf='/#'>Sobre</a>
+<li>
+<a href='/#login'>Sair</a>
+</li>
+</u>
+</nav>
+*/

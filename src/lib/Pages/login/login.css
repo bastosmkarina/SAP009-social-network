@@ -1,25 +1,54 @@
-.login {
-  text-align: center;
-  flex-direction: column;
-  width: 90vw ;
-  background-color: #ffffff;
-  border-color: black;
-  gap: 10vh;
-  align-items: center;
-  padding: 20px 0;
-  margin-top: 4vh;
-  margin-left: 20px;
+.formulario-login {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
-.primeiro-texto-login {
+.frase1-login {
   text-align: center;
+  font-weight: bold;
+}
+
+.frase2-login {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.texto1 {
+  margin-bottom: 20px;
   font-weight: bold;
 }
 
 .login-botao {
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color:rgb(255, 255, 255);
+.google-botao {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
+
+.cadastro-botao {
+  margin-top: 10px;
+}
+
+.texto3 {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 10px;
+
+}
+
+
+

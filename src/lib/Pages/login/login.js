@@ -5,15 +5,16 @@ export default () => {
 
   const template = `
  
- <p class='primeiro-texto-login'> Sua comunidade de trocas de receitas para Air Fryer </p>
- <form id='login' class='login'>
- <p> Acesse: </p>
- <input type ='email' name ='email' id='email-login' placeholder='Email' autocomplete=''> <br>
- <input type ='password' name='password' id='senha-login' placeholder='Senha' autocomplete='current-password'> <br>
- <button type='button' class='login-botao' id='login-botao'> Entrar </button> <br>
+ <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
+ <p class='frase2-login'>para Air Fryer</p>
+ <form id='login' class='formulario-login'>
+ <p class='texto1'> Acesse: </p>
+ <input type ='email' name ='email' id='email-login' placeholder='Email' autocomplete=''>
+ <input type ='password' name='password' id='senha-login' placeholder='Senha' autocomplete='current-password'>
+ <button type='button' class='login-botao' id='login-botao'> Entrar </button>
  <p> Se preferir, entre com sua conta Google: </p>
- <button type='button' id='google-botao' class='google-botao'><i class="fab fa-google"></i></button>
- <p> Novo por aqui? Crie agora sua conta! <p>
+ <img src='../../../images/google.png' class='google-botao' id='google-botao'>
+ <p class='texto3'> Novo por aqui? Crie agora sua conta! <p>
  <a href='#cadastro'><button type='button' class='cadastro-botao' id='cadastro-botao'> Cadastrar </button></a>
  </form>
 `;
