@@ -1,32 +1,16 @@
 
-.logo {
-  width: 120px;
-  
-}
-
 .menu-hamburguer {
-  display: flex;
-  flex-direction: column;
   width: 30px;
   height: 200px;
-  margin-left: 200px;
-  margin-top: -130px;
 }
 
-
-.menu-hamburguer a {
-  color:rgb(238, 160, 240);
-  width: 100%;
-  height: 2px;
-  
-}
-
-.menu-hamburguer i {
-  color:rgb(238, 160, 240);
-  width: 100%;
-  height: 2px;
-  margin-top: -30px;
-  margin-left: 60px;
+.descriçao {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 .postagens {
@@ -34,7 +18,6 @@
   height: 50px;
   background-color: #f7f7f7;
   border: 1px solid #000000;
-  padding: 10px;
   font-size: 16px;
 }
 
@@ -43,10 +26,6 @@
   margin-left: 15px;
 }
 
-.span {
-  color: rgb(238, 160, 240);
-
-}
 
 
 

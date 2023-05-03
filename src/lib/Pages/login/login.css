@@ -18,7 +18,7 @@
   margin-bottom: 20px;
 }
 
-.acesse {
+.texto1 {
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -41,6 +41,14 @@
 
 .cadastro-botao {
   margin-top: 10px;
+}
+
+.texto3 {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 10px;
 
 }
+
+
 

@@ -8,13 +8,13 @@ export default () => {
  <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
  <p class='frase2-login'>para Air Fryer</p>
  <form id='login' class='formulario-login'>
- <p class='acesse'> Acesse: </p>
+ <p class='texto1'> Acesse: </p>
  <input type ='email' name ='email' id='email-login' placeholder='Email' autocomplete=''>
  <input type ='password' name='password' id='senha-login' placeholder='Senha' autocomplete='current-password'>
  <button type='button' class='login-botao' id='login-botao'> Entrar </button>
  <p> Se preferir, entre com sua conta Google: </p>
  <img src='../../../images/google.png' class='google-botao' id='google-botao'>
- <p> Novo por aqui? Crie agora sua conta! <p>
+ <p class='texto3'> Novo por aqui? Crie agora sua conta! <p>
  <a href='#cadastro'><button type='button' class='cadastro-botao' id='cadastro-botao'> Cadastrar </button></a>
  </form>
 `;
