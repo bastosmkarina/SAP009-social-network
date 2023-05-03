@@ -16,7 +16,7 @@ input {
   display: block;
   width: 100%;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -30,10 +30,13 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-style: normal;
   font-size: medium;
   font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 button:hover {

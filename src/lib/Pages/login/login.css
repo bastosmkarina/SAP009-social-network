@@ -1,5 +1,4 @@
 .formulario-login {
-  align-items: center;
   width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -16,12 +15,32 @@
 .frase2-login {
   text-align: center;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.acesse {
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .login-botao {
   cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-button:hover {
-  background-color:rgb(255, 255, 255);
+.google-botao {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
+
+.cadastro-botao {
+  margin-top: 10px;
+
+}
+

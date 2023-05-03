@@ -1,6 +1,7 @@
 @import url(../lib/Pages/login/login.css);
 @import url(../lib/Pages/cadastro/cadastro.css);
 @import url(../lib/Pages/feed/feed.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     margin: 0;
@@ -9,7 +10,7 @@
 
 body{
     background: #F0F8FF;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
 }
 
