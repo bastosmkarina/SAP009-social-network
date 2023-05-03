@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
 
 export default () => {
@@ -29,7 +28,8 @@ export default () => {
   }
 
   const cadastro = container.querySelector('#confirmar');
-  cadastro.addEventListener('click', () => {
+  cadastro.addEventListener('click', (event) => {
+    event.preventDefault();
     const nomeCompleto = container.querySelector('#Nome-Completo');
     const apelido = container.querySelector('#Apelido');
     const email = container.querySelector('#email');
