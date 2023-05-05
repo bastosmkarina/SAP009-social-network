@@ -77,20 +77,13 @@
     vertical-align: middle;
     margin-left: 100px;
     margin-top: 50px;
-    margin-right: 20px
+    margin-right: -100px;
   }
 
   .formulario-login {
     display: inline-block;
     vertical-align: middle;
   }
-
-
-
-
-
-
-
 
 }
 
