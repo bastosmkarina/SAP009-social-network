@@ -1,6 +1,5 @@
 import { auth } from '../../../firebaseServices/firebaseAuth.js';
-import { newPost } from '../../../firebaseServices/fireStore.js';
-
+import { newPost, accessPost } from '../../../firebaseServices/fireStore.js';
 
 export default () => {
   const container = document.createElement('div');
@@ -21,38 +20,35 @@ export default () => {
   <i class='fa-regular fa-trash-can'></i>
   `;
   container.innerHTML = template;
-
-  /*
-  container.append(sectionMain);
-  container.append(Footer());
-  class UserException {
-    constructor(message) {
-      this.message = message;
-      this.name = 'UserException';
-    }
-  }
-*/
+ //criar uma duv vazia para receber os posts pelo id (pra puxar pro html)
+ //chamar funçao de aceeso do post 
+//funçao retornará um array, que teremos que usar um loop/map pra pegar cada post e criar a template string sdo post 
 
   const postagem = container.querySelector('#escrever-receita');
   const buttonPost = container.querySelector('#publicar-botao');
-  buttonPost.addEventListener('click', () => {
+  const postagensSection = container.querySelector('.postagens');
+
+  buttonPost.addEventListener('click', async () => {
     if (postagem.value !== '') {
       const timeElapsed = Date.now();
       const today = new Date(timeElapsed);
       const dataPostagem = today.toLocaleDateString();
       const username = auth.currentUser.displayName;
       const idUser = auth.currentUser.uid;
-      newPost(postagem.value, dataPostagem, username, idUser);
-      try {
-        if (postagem.value === '') {
-          const mensagemError = 'Por favor, escreva algo para publicar!';
-          throw new UserException(mensagemError);
-        }
-        alert('Publicação efetuada com sucesso!');
-        window.location.hash = '#feed';
-      } catch (error) {
-        alert(error.message);
-      }
+      await newPost(postagem.value, dataPostagem, username, idUser);
+      postagem.value = '';
+      postagensSection.innerHTML = '';
+      const messages = await accessPost();
+      messages.forEach((message) => {
+        const postContainer = document.createElement('div');
+        postContainer.innerHTML = `
+          <p>${message.data} - ${message.username}</p>
+          <p>${message.post}</p>
+        `;
+        postagensSection.appendChild(postContainer);
+      });
+      // alert('Publicação efetuada com sucesso!');
+      // window.location.hash = '#feed';
     } else {
       alert('Por favor, escreva algo para publicar!');
     }

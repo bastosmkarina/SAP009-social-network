@@ -15,17 +15,18 @@ import { app } from '../firebaseInit.js';
 
 const db = getFirestore(app);
 
-export const newPost = async (postagem, dataPostagem, id) => addDoc(collection(db, 'post'), {
+export const newPost = (postagem, dataPostagem, username, id) => addDoc(collection(db, 'post'), {
   data: dataPostagem,
   post: postagem,
   idUser: id,
   likes: 0,
   likesUsers: [],
+  username,
 });
 
 export const accessPost = async () => {
   const messages = [];
-  const queryOrder = query(collection(db, 'posts'), orderBy('data'));
+  const queryOrder = query(collection(db, 'post'), orderBy('data'));
   const querySnapshot = await getDocs(queryOrder);
   querySnapshot.forEach((item) => {
     const data = item.data();
@@ -35,7 +36,7 @@ export const accessPost = async () => {
   return messages;
 };
 
-export const editPost = (postId, textArea) => updateDoc(doc(db, 'posts', postId), {
+export const editPost = (postId, textArea) => updateDoc(doc(db, 'post', postId), {
   post: textArea,
 });
 
