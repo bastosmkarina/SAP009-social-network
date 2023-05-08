@@ -1,10 +1,24 @@
-
-.menu-hamburguer {
-  width: 30px;
-  height: 200px;
+.titulo-feed {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.descriçao {
+.membros {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.texto-comunidade {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.texto-compartilhe {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.caixa-publicar {
   width: 300px;
   margin: 0 auto;
   padding: 20px;
@@ -13,19 +27,113 @@
   background-color: rgb(255, 255, 255);
 }
 
+.publicar-botao {
+  margin-top: 20px;
+}
+
+.apelido {
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
 .postagens {
-  width: 150px;
-  height: 50px;
-  background-color: #f7f7f7;
-  border: 1px solid #000000;
-  font-size: 16px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 .fa-regular {
-  margin-right: 30px;
-  margin-left: 15px;
+  margin-right: 80px;
+  margin-left: 40px;
 }
 
+.airfryerfeed {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .logo-mobile {
+    display: none;
+  }
+ 
+  .pagina-feed {
+    display: flex;
+    align-items: center;
+  }
+
+  .airfryerfeed {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -80px;
+    margin-top: 50px;
+    margin-right: 200px
+  }
+
+  .caixa-publicar {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .titulo-feed {
+    margin-bottom: 10px;
+  }
+  
+  .membros {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .texto-comunidade {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .texto-compartilhe {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .caixa-publicar {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .publicar-botao {
+    margin-top: 20px;
+  }
+  
+  .apelido {
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  
+  .postagens {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .fa-regular {
+    margin-right: 80px;
+    margin-left: 40px;
+  }
+
+
+
+
+
+
+}
 
 
 

@@ -1,10 +1,20 @@
-/* eslint-disable no-alert */
 import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
+import logomobile from '../../../images/logo/logomobile.png';
+import logodesktop from '../../../images/logo/logodesktop.png';
 
 export default () => {
   const container = document.createElement('div');
   const template = `  
-    
+
+  <header>
+  <img class='logo-mobile' src='${logomobile}' alt=''>
+  <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
+  <p class='frase2-login'>para Air Fryer</p>
+  </header>
+
+  <section class='pagina-cadastro'>
+  <img class='logo-desktop' src='${logodesktop}' alt=''>
+
      <form class='formulario-cadastro'> 
      <p class='nome-formulario-cadastro'>Cadastro</p> 
      <input type='text' id='Nome-Completo' placeholder='Nome Completo'>
@@ -13,7 +23,8 @@ export default () => {
      <input type='password' id='senha' placeholder='Senha'>
      <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
      <span class='txt-error hide' id='txtError'></span>
-     </form>    
+     </form> 
+     </section> 
      `;
 
   container.innerHTML = template;
@@ -29,7 +40,8 @@ export default () => {
   }
 
   const cadastro = container.querySelector('#confirmar');
-  cadastro.addEventListener('click', () => {
+  cadastro.addEventListener('click', (event) => {
+    event.preventDefault();
     const nomeCompleto = container.querySelector('#Nome-Completo');
     const apelido = container.querySelector('#Apelido');
     const email = container.querySelector('#email');

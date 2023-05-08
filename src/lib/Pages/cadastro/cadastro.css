@@ -42,3 +42,27 @@ button {
 button:hover {
   background-color: #a3d0f7;
 }
+
+@media (min-width: 900px) {
+    .logo-mobile {
+      display: none;
+    }
+   
+    .pagina-cadastro {
+      display: flex;
+      align-items: center;
+    }
+  
+    .logo-desktop {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 100px;
+      margin-top: 50px;
+      margin-right: -100px
+    }
+  
+    .formulario-cadastro {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
