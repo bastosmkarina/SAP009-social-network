@@ -17,8 +17,6 @@ export const newPost = (postagem, dataPostagem, username, id) => addDoc(collecti
   data: dataPostagem,
   post: postagem,
   idUser: id,
-  likes: 0,
-  likesUsers: [],
   username,
 });
 
