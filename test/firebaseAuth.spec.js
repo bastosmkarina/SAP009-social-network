@@ -101,8 +101,8 @@ describe('newPost', () => {
     await newPost(postagem, dataPostagem, username, id);
 
     // Verificar se collection e addDoc foram chamadas com os argumentos corretos
-    expect(collection).toHaveBeenCalledWith(expect.anything(), 'post');
-    expect(addDoc).toHaveBeenCalledWith(expect.anything(), {
+    expect(collection).toHaveBeenCalledWith(undefined, 'post');
+    expect(addDoc).toHaveBeenCalledWith(undefined, {
       data: dataPostagem,
       post: postagem,
       idUser: id,
