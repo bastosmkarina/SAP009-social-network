@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
 import logomobile from '../../../images/logo/logomobile.png';
 import logodesktop from '../../../images/logo/logodesktop.png';
@@ -47,7 +48,6 @@ export default () => {
     const email = container.querySelector('#email');
     const senha = container.querySelector('#senha');
     if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
-      // eslint-disable-next-line no-alert
       alert('Por favor, preencha todos os campos.');
     } else {
       criarUsuario(nomeCompleto.value, apelido.value, email.value, senha.value)
