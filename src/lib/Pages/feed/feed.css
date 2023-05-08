@@ -54,6 +54,13 @@
   display: none;
 }
 
+.post-container {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
 @media (min-width: 900px) {
   .logo-mobile {
     display: none;
