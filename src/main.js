@@ -5,14 +5,14 @@ import feed from './lib/Pages/feed/feed.js';
 const main = document.querySelector('#root');
 
 const init = () => {
-  window.addEventListener('hashchange', () => {
+  window.addEventListener('hashchange', async () => {
     main.innerHTML = '';
     switch (window.location.hash) {
       case '':
         main.appendChild(login());
         break;
       case '#feed':
-        main.appendChild(feed());
+        main.appendChild(await feed());
         break;
       case '#cadastro':
         main.appendChild(cadastro());

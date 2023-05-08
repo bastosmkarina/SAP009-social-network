@@ -1,10 +1,12 @@
+/* eslint-disable no-alert */
 import { auth } from '../../../firebaseServices/firebaseAuth.js';
 import { newPost, accessPost } from '../../../firebaseServices/fireStore.js';
 import logomobile from '../../../images/logo/logomobile.png';
 import airfryerfeed from '../../../images/logo/airfryerfeed.png';
 
-export default () => {
+export default async () => {
   const container = document.createElement('div');
+
   const template = `
 
   <header>
@@ -24,25 +26,45 @@ export default () => {
   <p class='texto-compartilhe'>Compatilhe e tenha acesso as mais variadas receitas</p> 
   <textarea id='escrever-receita' name='publicar' rows='5' cols='40' placeholder='Publique aqui sua receita'></textarea> 
   <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
-  <p class='apelido'>Apelido</p>
   <section class='postagens'></section>
-  <i class='fa-regular fa-heart'></i>
-  <i class='fa-regular fa-pen-to-square'></i>
-  <i class='fa-regular fa-trash-can'></i>
   </section>
   </section>
-  <footer>
-  2023
-  </footer>
   `;
+
   container.innerHTML = template;
- //criar uma duv vazia para receber os posts pelo id (pra puxar pro html)
- //chamar funçao de aceeso do post 
-//funçao retornará um array, que teremos que usar um loop/map pra pegar cada post e criar a template string sdo post 
+
+  const postagensSection = container.querySelector('.postagens');
+
+  let messages = await accessPost();
+  messages.forEach((message) => {
+    const postContainer = document.createElement('div');
+    postContainer.classList.add('post-container');
+    postContainer.innerHTML = `
+      <p>${message.data} - ${message.username}</p>
+      <p>${message.post}</p>
+      <i id='editar' class='fa-regular fa-pen-to-square'></i>
+      <i id='deletar' class='fa-regular fa-trash-can'></i>
+    `;
+    postagensSection.appendChild(postContainer);
+  });
+
+  /*
+  arrayPosts.forEach(post) => {
+    if (post.userId === auth.currentUser.uid)
+  const botaoEditar = document.getElementById(post.idUser + 'editar');
+    };
+
+  botaoEditar.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (window.confirm('Tem certeza de que deseja editar a publicação?')) {
+      botaoEditar.setAttribute('hidden', true);
+      postagensSection.removeAttribute('disabled');
+    }
+  });
+  */
 
   const postagem = container.querySelector('#escrever-receita');
   const buttonPost = container.querySelector('#publicar-botao');
-  const postagensSection = container.querySelector('.postagens');
 
   buttonPost.addEventListener('click', async () => {
     if (postagem.value !== '') {
@@ -54,12 +76,14 @@ export default () => {
       await newPost(postagem.value, dataPostagem, username, idUser);
       postagem.value = '';
       postagensSection.innerHTML = '';
-      const messages = await accessPost();
+      messages = await accessPost();
       messages.forEach((message) => {
         const postContainer = document.createElement('div');
         postContainer.innerHTML = `
           <p>${message.data} - ${message.username}</p>
           <p>${message.post}</p>
+          <i class='fa-regular fa-pen-to-square'></i>
+          <i class='fa-regular fa-trash-can'></i>
         `;
         postagensSection.appendChild(postContainer);
       });
