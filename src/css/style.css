@@ -1,8 +1,7 @@
 @import url(../lib/Pages/login/login.css);
-@import url(../lib/Pages/feed/feed.css);
 @import url(../lib/Pages/cadastro/cadastro.css);
-@import url(../lib/Pages/publicar/publicar.css);
-
+@import url(../lib/Pages/feed/feed.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     margin: 0;
@@ -11,28 +10,12 @@
 
 body{
     background: #F0F8FF;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     font-style: normal;
 }
 
-.logo {
-    display: flex;
-    justify-content: flex-start;
-    max-width:100px;
-    max-height:100px;
-    width: auto;
-    height: auto;
-    padding: 8px;
-    border: 3px;
-}
-    
-h1{
-    color: rgb(246, 140, 246);
-    text-align: center;
-}
-
 .footer {
-    background-color: rgb(246, 140, 246);
+    background-color: rgb(255, 255, 255);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -42,6 +25,3 @@ h1{
 .footer p {
     text-align: center;
 }
-
-
-
