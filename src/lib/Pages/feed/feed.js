@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { auth } from '../../../firebaseServices/firebaseAuth.js';
 import { newPost, accessPost } from '../../../firebaseServices/fireStore.js';
 import logomobile from '../../../images/logo/logomobile.png';
@@ -36,10 +37,6 @@ export default () => {
   </footer>
   `;
   container.innerHTML = template;
- //criar uma duv vazia para receber os posts pelo id (pra puxar pro html)
- //chamar funçao de aceeso do post 
-//funçao retornará um array, que teremos que usar um loop/map pra pegar cada post e criar a template string sdo post 
-
   const postagem = container.querySelector('#escrever-receita');
   const buttonPost = container.querySelector('#publicar-botao');
   const postagensSection = container.querySelector('.postagens');
