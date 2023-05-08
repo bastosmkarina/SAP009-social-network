@@ -1,5 +1,5 @@
 import { auth } from '../../../firebaseServices/firebaseAuth.js';
-import { newPost, accesPost } from '../../../firebaseServices/fireStore.js';
+import { newPost, accessPost } from '../../../firebaseServices/fireStore.js';
 import logomobile from '../../../images/logo/logomobile.png';
 import airfryerfeed from '../../../images/logo/airfryerfeed.png';
 

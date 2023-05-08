@@ -5,8 +5,6 @@ import {
   collection,
   doc,
   updateDoc,
-  arrayUnion,
-  arrayRemove,
   deleteDoc,
   query,
   orderBy,
@@ -40,12 +38,4 @@ export const editPost = (postId, textArea) => updateDoc(doc(db, 'post', postId),
   post: textArea,
 });
 
-export const likeCounter = async (postId, usernameUser) => updateDoc(doc(db, 'posts', postId), {
-  likesUsers: arrayUnion(usernameUser),
-});
-
-export const deslikeCounter = async (postId, usernameUser) => updateDoc(doc(db, 'posts', postId), {
-  likesUsers: arrayRemove(usernameUser),
-});
-
-export const deletePost = async (postId) => deleteDoc(doc(db, 'posts', postId));
+export const deletePost = async (postId) => deleteDoc(doc(db, 'post', postId));
