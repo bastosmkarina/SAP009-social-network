@@ -71,12 +71,6 @@
     margin-top: 50px;
     margin-right: 200px
   }
-
-  .caixa-publicar {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   .titulo-feed {
     margin-bottom: 10px;
   }
@@ -97,12 +91,15 @@
   }
   
   .caixa-publicar {
+    display: inline-block;
+    vertical-align: middle;
     width: 300px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
+
   }
   
   .publicar-botao {
