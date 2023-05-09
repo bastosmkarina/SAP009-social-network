@@ -26,9 +26,8 @@ export default async () => {
   <p class='texto-compartilhe'>Compatilhe e tenha acesso as mais variadas receitas</p> 
   <textarea id='escrever-receita' name='publicar' rows='5' cols='40' placeholder='Publique aqui sua receita'></textarea> 
   <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
-  <section class='postagens'></section>
   </section>
-  </section>
+  <div class='postagens'></div>
   `;
 
   container.innerHTML = template;
@@ -48,21 +47,6 @@ export default async () => {
     postagensSection.appendChild(postContainer);
   });
 
-  /*
-  arrayPosts.forEach(post) => {
-    if (post.userId === auth.currentUser.uid)
-  const botaoEditar = document.getElementById(post.idUser + 'editar');
-    };
-
-  botaoEditar.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (window.confirm('Tem certeza de que deseja editar a publicação?')) {
-      botaoEditar.setAttribute('hidden', true);
-      postagensSection.removeAttribute('disabled');
-    }
-  });
-  */
-
   const postagem = container.querySelector('#escrever-receita');
   const buttonPost = container.querySelector('#publicar-botao');
 
@@ -80,7 +64,7 @@ export default async () => {
       messages.forEach((message) => {
         const postContainer = document.createElement('div');
         postContainer.innerHTML = `
-          <p>${message.data} - ${message.username}</p>
+          <p class='data-name'>${message.data} - ${message.username}</p>
           <p>${message.post}</p>
           <i class='fa-regular fa-pen-to-square'></i>
           <i class='fa-regular fa-trash-can'></i>
