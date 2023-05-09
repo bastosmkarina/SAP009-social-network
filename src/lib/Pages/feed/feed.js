@@ -1,6 +1,10 @@
 /* eslint-disable no-alert */
 import { auth } from '../../../firebaseServices/firebaseAuth.js';
-import { newPost, accessPost } from '../../../firebaseServices/fireStore.js';
+import {
+  newPost,
+  accessPost,
+  editPost,
+} from '../../../firebaseServices/fireStore.js';
 import logomobile from '../../../images/logo/logomobile.png';
 import airfryerfeed from '../../../images/logo/airfryerfeed.png';
 
@@ -10,9 +14,13 @@ export default async () => {
   const template = `
 
   <header>
+
   <img class='logo-mobile' src='${logomobile}' alt=''>
   <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
   <p class='frase2-login'>para Air Fryer</p>
+
+  <p class='titulo-header-desktop'>iorkut</p>
+  <a href="#login" class="sair">Sair</a>
   </header>
 
 
@@ -26,42 +34,51 @@ export default async () => {
   <p class='texto-compartilhe'>Compatilhe e tenha acesso as mais variadas receitas</p> 
   <textarea id='escrever-receita' name='publicar' rows='5' cols='40' placeholder='Publique aqui sua receita'></textarea> 
   <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
-  <section class='postagens'></section>
   </section>
-  </section>
+  <div class='postagens'></div>
   `;
 
   container.innerHTML = template;
 
   const postagensSection = container.querySelector('.postagens');
+  let postContainer = document.createElement('div');
 
   let messages = await accessPost();
   messages.forEach((message) => {
-    const postContainer = document.createElement('div');
     postContainer.classList.add('post-container');
     postContainer.innerHTML = `
-      <p>${message.data} - ${message.username}</p>
-      <p>${message.post}</p>
-      <i id='editar' class='fa-regular fa-pen-to-square'></i>
-      <i id='deletar' class='fa-regular fa-trash-can'></i>
-    `;
+          <p class='data-name'>${message.data} - ${message.username}</p>
+          <p class='post-text'>${message.post}</p>
+          <i id='editar' class='fa-regular fa-pen-to-square'></i>
+          <i id='deletar' class='fa-regular fa-trash-can'></i>
+          <button type='button' id='botao-salvar'>salvar</button>
+        `;
+
+    const editIcon = postContainer.querySelector('#editar');
+    const saveButton = postContainer.querySelector('#botao-salvar');
+    const postText = postContainer.querySelector('.post-text');
+
+    editIcon.addEventListener('click', () => {
+      postText.contentEditable = true;
+      postText.focus();
+      editIcon.classList.add('hidden');
+      saveButton.classList.remove('hidden');
+    });
+
+    saveButton.addEventListener('click', async () => {
+      const postId = message.id;
+      const editedPost = postText.innerText;
+      await editPost(postId, editedPost);
+      postagensSection.innerHTML = '';
+      messages = await accessPost();
+      messages.forEach((message) => {
+        // Renderizar as postagens novamente
+        // ...
+      });
+    });
+
     postagensSection.appendChild(postContainer);
   });
-
-  /*
-  arrayPosts.forEach(post) => {
-    if (post.userId === auth.currentUser.uid)
-  const botaoEditar = document.getElementById(post.idUser + 'editar');
-    };
-
-  botaoEditar.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (window.confirm('Tem certeza de que deseja editar a publicação?')) {
-      botaoEditar.setAttribute('hidden', true);
-      postagensSection.removeAttribute('disabled');
-    }
-  });
-  */
 
   const postagem = container.querySelector('#escrever-receita');
   const buttonPost = container.querySelector('#publicar-botao');
@@ -78,17 +95,18 @@ export default async () => {
       postagensSection.innerHTML = '';
       messages = await accessPost();
       messages.forEach((message) => {
-        const postContainer = document.createElement('div');
+        postContainer = document.createElement('div');
         postContainer.innerHTML = `
-          <p>${message.data} - ${message.username}</p>
+          <p class='data-name'>${message.data} - ${message.username}</p>
           <p>${message.post}</p>
-          <i class='fa-regular fa-pen-to-square'></i>
-          <i class='fa-regular fa-trash-can'></i>
+          <i id='editar' class='fa-regular fa-pen-to-square'></i>
+          <i id='deletar' class='fa-regular fa-trash-can'></i>
+          <button type='button' id='botao-salvar'>salvar</button>
         `;
         postagensSection.appendChild(postContainer);
       });
-      // alert('Publicação efetuada com sucesso!');
-      // window.location.hash = '#feed';
+    // alert('Publicação efetuada com sucesso!');
+    // window.location.hash = '#feed';
     } else {
       alert('Por favor, escreva algo para publicar!');
     }
