@@ -23,8 +23,8 @@
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
   background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
 }
 
 .publicar-botao {
@@ -36,36 +36,88 @@
   margin-top: 20px;
 }
 
-.postagens {
-  width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: rgb(255, 255, 255);
-}
-
-.fa-regular {
-  margin-right: 80px;
-  margin-left: 40px;
-}
-
 .airfryerfeed {
   display: none;
 }
 
+.post-container {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#editar {
+  margin-left: 150px;
+}
+
+#deletar {
+  margin-left: 100px;
+}
+
+.titulo-header-desktop {
+}
+
+.sair {
+  
+  background-color: #d1e5f7;
+  color: rgb(7, 6, 6);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto", Arial, sans-serif;
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 @media (min-width: 900px) {
+
+  header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+  }
+
+  .titulo-header-desktop {
+    color: #F84ADC;
+    margin-left: 30px;
+    font-size: 100px;
+    font-weight: bolder;
+  }
+
+  .sair {
+    margin-right: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 20px;
+    background-color: #d1e5f7;
+    color: rgb(7, 6, 6);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+  }
+
   .logo-mobile {
     display: none;
   }
  
-  .pagina-feed {
-    display: flex;
-    align-items: center;
-  }
-
   .airfryerfeed {
-    display: inline-block;
+    display: none;
     vertical-align: middle;
     margin-left: -80px;
     margin-top: 50px;
@@ -99,6 +151,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
+    align-items: center;
 
   }
   
@@ -111,25 +164,10 @@
     margin-top: 20px;
   }
   
-  .postagens {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-  }
-  
   .fa-regular {
     margin-right: 80px;
     margin-left: 40px;
   }
-
-
-
-
-
-
 }
 
 
