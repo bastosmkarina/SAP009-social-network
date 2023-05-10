@@ -5,12 +5,19 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
-
+import {
+  addDoc,
+  collection,
+} from 'firebase/firestore';
 import {
   auth, criarUsuario, login, logingoogle,
 } from '../src/firebaseServices/firebaseAuth';
+import {
+  newPost,
+} from '../src/firebaseServices/fireStore';
 
 jest.mock('firebase/auth');
+jest.mock('firebase/firestore');
 
 describe('login', () => {
   it('deve ser uma função', () => {
@@ -72,9 +79,34 @@ describe('criarUsuario', () => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, senha);
     expect(updateProfile).toHaveBeenCalledTimes(1);
-    // eslint-disable-next-line max-len
     expect(updateProfile).toHaveBeenCalledWith(mockUserCredential.user, {
       nomeCompleto, Apelido,
+    });
+  });
+});
+
+describe('newPost', () => {
+  it('deve criar uma nova postagem com sucesso', async () => {
+    // Dados de entrada
+    const postagem = 'Minha nova postagem';
+    const dataPostagem = new Date();
+    const username = 'joao';
+    const id = '123';
+
+    // Mock do retorno da função addDoc
+    const addDocReturnValue = { id: 'abc' };
+    addDoc.mockResolvedValueOnce(addDocReturnValue);
+
+    // Chamada da função newPost com os dados de entrada
+    await newPost(postagem, dataPostagem, username, id);
+
+    // Verificar se collection e addDoc foram chamadas com os argumentos corretos
+    expect(collection).toHaveBeenCalledWith(undefined, 'post');
+    expect(addDoc).toHaveBeenCalledWith(undefined, {
+      data: dataPostagem,
+      post: postagem,
+      idUser: id,
+      username,
     });
   });
 });
