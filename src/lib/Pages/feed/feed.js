@@ -43,7 +43,7 @@ export default () => {
   const printPost = async () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
-      <section class="areaPostado" id="${post.id}">
+      <section class="areaPostado" id="post-${post.id}">
       ${console.log(post.id)}
         <div class="postado">
         <ul>
@@ -55,14 +55,16 @@ export default () => {
                   <p class="user-name">${post.username}</p>
                   </div>
                   </div>
-                  <textarea disabled name="" id="txt-area-postado${post.id}" cols="70" rows="5">${post.post}</textarea>
+                  <textarea disabled name="" id="txt-area-postado-${post.id}" cols="70" rows="5">${post.post}</textarea>
                   ${console.log(post.post)}
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
-                  ${post.username === auth.currentUser.uid ? `
-                  <button id="${post.id}editar" class="btn-postar editado">Editar</button>
-                  <button id="${post.id}salvar" class="btn-postar editado"></button>
-                  <button id="${post.id}deletar" class="btn-postar delete">
+                  ${post.idUser === auth.currentUser.uid ? `
+                  <button id="editar-${post.id}" class="btn-postar editado">
+                  <i id='editar' class='fa-regular fa-pen-to-square'></i>
+                  </button>
+                  <button id="salvar-${post.id}" class="btn-postar editado">salvar</button>
+                  <button id="deletar-${post.id}" class="btn-postar delete">deletar
                   </button>` : ''}
                       </div>
                      </div>
@@ -72,17 +74,23 @@ export default () => {
       </section>     
     `).join('');
 
+    console.log('passei por aqui');
     container.querySelector('.postagens').innerHTML = postList;
 
-    arrayPosts.forEach(post => {
-      if (post.userId === auth.currentUser.uid) {
-        const btnDeletar = document.getElementById(`${post.id}deletar`);
+    arrayPosts.forEach((post) => {
+      console.log('passei por aqui');
+      console.log(post.idUser);
+      if (post.idUser === auth.currentUser.uid) {
+        console.log('entrou');
+        const btnDeletar = container.querySelector(`#deletar-${post.id}`);
+        console.log(btnDeletar);
         btnDeletar.addEventListener('click', (e) => {
+          console.log('botao deletar');
           e.preventDefault();
           if (window.confirm('Tem certeza de que deseja excluir a publicação?')) {
             deletePost(post.id)
               .then(() => {
-                const areaPostado = document.getElementById(post.id);
+                const areaPostado = container.querySelector(`#post-${post.id}`);
                 areaPostado.remove();
               });
           }
@@ -90,12 +98,12 @@ export default () => {
       }
     });
 
-    arrayPosts.forEach(post => {
-      if (post.userId === auth.currentUser.uid) {
-        const btnEditar = document.getElementById(`${post.id}editar`);
-        const textPostado = document.getElementById(`txt-area-postado${post.id}`);
-        const btnSalvar = document.getElementById(`${post.id}salvar`);
-        btnSalvar.addEventListener('click', (e) => {
+    arrayPosts.forEach((post) => {
+      if (post.idUser === auth.currentUser.uid) {
+        const btnEditar = document.getElementById(`editar-${post.id}`);
+        const textPostado = document.getElementById(`txt-area-postado-${post.id}`);
+        const btnSalvar = document.getElementById(`salvar-${post.id}`);
+        btnSalvar.addEventListener('click', () => {
           editPost(post.id, textPostado.value);
           textPostado.setAttribute('disabled', true);
           btnEditar.removeAttribute('hidden');
@@ -118,10 +126,10 @@ export default () => {
   btnPublicar.addEventListener('click', () => {
     if (textArea.value !== '') {
       const today = new Date();
-      const userName = auth.currentUser.displayName;
+      const username = auth.currentUser.displayName;
       const idUser = auth.currentUser.uid;
 
-      newPost(today, idUser, textArea.value, userName).then(() => {
+      newPost(textArea.value, today, username, idUser).then(() => {
         printPost();
         textArea.value = '';
       });
