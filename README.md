@@ -1,4 +1,4 @@
-# iorkut - comunidade de receitas de airfryer
+# iorkut - comunidade para receitas de airfryer
 
 <b>Acesse o link do projeto aqui: "colocar link deploy"</b>
 
