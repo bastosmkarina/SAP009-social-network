@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   createUserWithEmailAndPassword,
   updateProfile,
@@ -8,12 +9,21 @@ import {
 import {
   addDoc,
   collection,
-} from 'firebase/firestore';
+  updateDoc,
+  doc,
+  deleteDoc,
+  orderBy,
+  query,
+}
+  from 'firebase/firestore';
 import {
   auth, criarUsuario, login, logingoogle,
 } from '../src/firebaseServices/firebaseAuth';
 import {
+  editPost,
   newPost,
+  deletePost,
+  accessPost,
 } from '../src/firebaseServices/fireStore';
 
 jest.mock('firebase/auth');
@@ -108,5 +118,62 @@ describe('newPost', () => {
       idUser: id,
       username,
     });
+  });
+});
+describe('editPost', () => {
+  it('should be a function', () => {
+    expect(typeof editPost).toBe('function');
+  });
+
+  it('deve editar e atualizar a publicação', async () => {
+    updateDoc.mockResolvedValue();
+    const mockDoc = 'doc';
+    doc.mockReturnValueOnce(mockDoc);
+    const edicaoPost = 'editar';
+    const salvarPostagem = 'post';
+    const atualizarPostagem = {
+      post: salvarPostagem,
+    };
+
+    await editPost(edicaoPost, salvarPostagem);
+
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'post', salvarPostagem);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(mockDoc, atualizarPostagem);
+  });
+});
+
+describe('deletePost', () => {
+  it('deve excluir o post', async () => {
+    const mockDoc = 'doc';
+    doc.mockReturnValueOnce(mockDoc);
+    const deletarPostagem = 'postId';
+    await deletePost(deletarPostagem);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', deletarPostagem);
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(deleteDoc).toHaveBeenCalledWith(mockDoc);
+  });
+});
+describe('accessPost', () => {
+  it('deve ser uma função', () => {
+    expect(typeof accessPost).toBe('function');
+  });
+
+  it('deve acessar a publicação criada', async () => {
+    orderBy.mockReturnValueOnce({ });
+    query.mockReturnValueOnce({ });
+    onSnapshot.mockReturnValueOnce([]);
+    const queryOrder = 'data';
+    collection.mockReturnValueOnce(queryOrder);
+    await accessPost();
+    expect(orderBy).toHaveBeenCalledTimes(1);
+    expect(orderBy).toHaveBeenCalledWith('data', 'desc');
+    expect(collection).toHaveBeenCalledTimes(1);
+    expect(collection).toHaveBeenCalledWith(indefinido, 'postagens');
+    expect(query).toHaveBeenCalledTimes(1);
+    expect(query).toHaveBeenCalledWith(queryOrder, { });
+    expect(onSnapshot).toHaveBeenCalledTimes(1);
+    expect(onSnapshot).toHaveBeenCalledWith({ }, expect.any(Function));
   });
 });

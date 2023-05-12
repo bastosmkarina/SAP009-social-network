@@ -57,9 +57,6 @@
   margin-left: 100px;
 }
 
-.titulo-header-desktop {
-}
-
 .sair {
   
   background-color: #d1e5f7;
@@ -146,7 +143,6 @@
     display: flexbox;
     width: 600px;
     margin-right: 10px;
-    margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
