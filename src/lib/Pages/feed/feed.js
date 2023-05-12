@@ -44,7 +44,10 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
+<<<<<<< HEAD
       
+=======
+>>>>>>> c24646ba9d8a66fd341afca9354a557de1907939
         <div class="postado">
         <ul>
         <li>
@@ -55,8 +58,12 @@ export default () => {
                   <p class="user-name">${post.username}</p>
                   </div>
                   </div>
+<<<<<<< HEAD
                   <textarea disabled name="" id="txt-area-postado-${post.id}" cols="70" rows="5">${post.post}</textarea>
                  
+=======
+                  <textarea disabled name="" id="txt-area-postado-${post.id}" cols="35" rows="4">${post.post}</textarea>
+>>>>>>> c24646ba9d8a66fd341afca9354a557de1907939
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
                   ${post.idUser === auth.currentUser.uid ? `
@@ -79,7 +86,10 @@ export default () => {
     arrayPosts.forEach((post) => {
       if (post.idUser === auth.currentUser.uid) {
         const btnDeletar = container.querySelector(`#deletar-${post.id}`);
+<<<<<<< HEAD
 
+=======
+>>>>>>> c24646ba9d8a66fd341afca9354a557de1907939
         btnDeletar.addEventListener('click', (e) => {
           e.preventDefault();
           if (window.confirm('Tem certeza de que deseja excluir a publicação?')) {
