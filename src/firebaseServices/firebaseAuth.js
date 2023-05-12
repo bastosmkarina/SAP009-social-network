@@ -22,5 +22,5 @@ export const logingoogle = () => {
 export const criarUsuario = (nomeCompleto, Apelido, email, senha) => createUserWithEmailAndPassword(auth, email, senha)
   .then((userCredential) => {
     const usuario = userCredential.user;
-    return updateProfile(usuario, { nomeCompleto, Apelido });
+    return updateProfile(usuario, { nomeCompleto });
   });

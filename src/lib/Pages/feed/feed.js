@@ -104,7 +104,7 @@ export default () => {
   const btnPublicar = container.querySelector('#publicar-botao');
   btnPublicar.addEventListener('click', () => {
     if (textArea.value !== '') {
-      const today = new Date();
+      const today = new Date().toLocaleDateString();
       const username = auth.currentUser.displayName;
       const idUser = auth.currentUser.uid;
 
