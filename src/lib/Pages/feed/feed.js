@@ -44,7 +44,7 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
-      ${console.log(post.id)}
+      
         <div class="postado">
         <ul>
         <li>
@@ -56,7 +56,7 @@ export default () => {
                   </div>
                   </div>
                   <textarea disabled name="" id="txt-area-postado-${post.id}" cols="70" rows="5">${post.post}</textarea>
-                  ${console.log(post.post)}
+                 
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
                   ${post.idUser === auth.currentUser.uid ? `
@@ -74,18 +74,13 @@ export default () => {
       </section>     
     `).join('');
 
-    console.log('passei por aqui');
     container.querySelector('.postagens').innerHTML = postList;
 
     arrayPosts.forEach((post) => {
-      console.log('passei por aqui');
-      console.log(post.idUser);
       if (post.idUser === auth.currentUser.uid) {
-        console.log('entrou');
         const btnDeletar = container.querySelector(`#deletar-${post.id}`);
-        console.log(btnDeletar);
+
         btnDeletar.addEventListener('click', (e) => {
-          console.log('botao deletar');
           e.preventDefault();
           if (window.confirm('Tem certeza de que deseja excluir a publicação?')) {
             deletePost(post.id)
@@ -125,7 +120,7 @@ export default () => {
   const btnPublicar = container.querySelector('#publicar-botao');
   btnPublicar.addEventListener('click', () => {
     if (textArea.value !== '') {
-      const today = new Date();
+      const today = new Date().toLocaleDateString();
       const username = auth.currentUser.displayName;
       const idUser = auth.currentUser.uid;
 

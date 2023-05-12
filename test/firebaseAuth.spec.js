@@ -8,12 +8,17 @@ import {
 import {
   addDoc,
   collection,
+  query,
+  orderBy,
+  getDocs,
 } from 'firebase/firestore';
 import {
   auth, criarUsuario, login, logingoogle,
 } from '../src/firebaseServices/firebaseAuth';
 import {
   newPost,
+  accessPost,
+  db,
 } from '../src/firebaseServices/fireStore';
 
 jest.mock('firebase/auth');
