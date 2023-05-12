@@ -9,11 +9,11 @@ import {
 import {
   addDoc,
   collection,
+  query,
+  orderBy,
   updateDoc,
   doc,
   deleteDoc,
-  orderBy,
-  query,
 }
   from 'firebase/firestore';
 import {

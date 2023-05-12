@@ -22,7 +22,7 @@ export const newPost = (postagem, dataPostagem, username, id) => addDoc(collecti
 
 export const accessPost = async () => {
   const messages = [];
-  const queryOrder = query(collection(db, 'post'), orderBy('data'));
+  const queryOrder = query(collection(db, 'post'), orderBy('data', 'desc'));
   const querySnapshot = await getDocs(queryOrder);
   querySnapshot.forEach((item) => {
     const data = item.data();
