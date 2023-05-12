@@ -14,14 +14,6 @@ body{
     font-style: normal;
 }
 
-.footer {
-    background-color: rgb(255, 255, 255);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
 .footer p {
     text-align: center;
 }
