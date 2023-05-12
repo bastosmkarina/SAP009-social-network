@@ -22,7 +22,7 @@ export default () => {
   <a href="#login" class="sair">Sair</a>
   </header>
 
-
+<body>
   <p class='titulo-feed'>Eu amo a minha Air Fryer!</p>
   <p class='membros'>(10.371 membros)<p/>
   <p class='texto-comunidade'>Comunidade feita para todas as pessoas que amam a praticidade de suas Air Fryers</p>
@@ -35,7 +35,7 @@ export default () => {
   <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
   <section class='postagens'></section>
   </section>
-  </section>
+  </body>
   `;
 
   container.innerHTML = template;
@@ -44,7 +44,6 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
-      ${console.log(post.id)}
         <div class="postado">
         <ul>
         <li>
@@ -56,7 +55,6 @@ export default () => {
                   </div>
                   </div>
                   <textarea disabled name="" id="txt-area-postado-${post.id}" cols="70" rows="5">${post.post}</textarea>
-                  ${console.log(post.post)}
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
                   ${post.idUser === auth.currentUser.uid ? `
@@ -74,18 +72,12 @@ export default () => {
       </section>     
     `).join('');
 
-    console.log('passei por aqui');
     container.querySelector('.postagens').innerHTML = postList;
 
     arrayPosts.forEach((post) => {
-      console.log('passei por aqui');
-      console.log(post.idUser);
       if (post.idUser === auth.currentUser.uid) {
-        console.log('entrou');
         const btnDeletar = container.querySelector(`#deletar-${post.id}`);
-        console.log(btnDeletar);
         btnDeletar.addEventListener('click', (e) => {
-          console.log('botao deletar');
           e.preventDefault();
           if (window.confirm('Tem certeza de que deseja excluir a publicação?')) {
             deletePost(post.id)
