@@ -162,6 +162,7 @@ describe('accessPost', () => {
   });
 
   it('deve acessar a publicação criada', async () => {
+
     const messages = [];
 
     const queryOrder = query(collection(db, 'post'), orderBy('data', 'desc'));
@@ -176,5 +177,3 @@ describe('accessPost', () => {
     }
 
     expect(messages.length).toBeGreaterThan(0);
-  });
-});
