@@ -1,7 +1,8 @@
-export default () => {
-  const footerContainer = document.createElement('footer');
+/* eslint-disable no-trailing-spaces */
+// export default () => {
+//   const footerContainer = document.createElement('footer');
 
-  const footerContent = `
+//   const footerContent = `
   
-  `
-}
+//   `
+// }
