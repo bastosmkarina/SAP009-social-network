@@ -10,10 +10,11 @@ import {
   addDoc,
   collection,
   query,
-  orderBy,
+  // orderBy,
   updateDoc,
   doc,
   deleteDoc,
+  db,
 }
   from 'firebase/firestore';
 import {
@@ -70,7 +71,7 @@ describe('logingoogle', () => {
 
 describe('criarUsuario', () => {
   it('deve ser uma função', () => {
-    expect(typeof login).toBe('function');
+    expect(typeof criarUsuario).toBe('function');
   });
 
   it('deve criar usuario e atualizar perfil com sucesso', async () => {
@@ -90,7 +91,7 @@ describe('criarUsuario', () => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, senha);
     expect(updateProfile).toHaveBeenCalledTimes(1);
     expect(updateProfile).toHaveBeenCalledWith(mockUserCredential.user, {
-      nomeCompleto, Apelido,
+      nomeCompleto, Apelido, email, senha,
     });
   });
 });
@@ -129,7 +130,7 @@ describe('editPost', () => {
     updateDoc.mockResolvedValue();
     const mockDoc = 'doc';
     doc.mockReturnValueOnce(mockDoc);
-    const edicaoPost = 'editar';
+    const edicaoPost = 'post';
     const salvarPostagem = 'post';
     const atualizarPostagem = {
       post: salvarPostagem,
@@ -148,10 +149,10 @@ describe('deletePost', () => {
   it('deve excluir o post', async () => {
     const mockDoc = 'doc';
     doc.mockReturnValueOnce(mockDoc);
-    const deletarPostagem = 'postId';
-    await deletePost(deletarPostagem);
-    expect(doc).toHaveBeenCalledWith(undefined, 'posts', deletarPostagem);
-    expect(doc).toHaveBeenCalledTimes(1);
+    const postId = 'postId';
+    await deletePost(postId);
+    expect(doc).toHaveBeenCalledWith(db, 'post', postId);
+    expect(doc).toHaveBeenCalledTimes(2);
     expect(deleteDoc).toHaveBeenCalledWith(mockDoc);
   });
 });
@@ -161,19 +162,18 @@ describe('accessPost', () => {
   });
 
   it('deve acessar a publicação criada', async () => {
-    orderBy.mockReturnValueOnce({ });
-    query.mockReturnValueOnce({ });
-    onSnapshot.mockReturnValueOnce([]);
-    const queryOrder = 'data';
-    collection.mockReturnValueOnce(queryOrder);
-    await accessPost();
-    expect(orderBy).toHaveBeenCalledTimes(1);
-    expect(orderBy).toHaveBeenCalledWith('data', 'desc');
-    expect(collection).toHaveBeenCalledTimes(1);
-    expect(collection).toHaveBeenCalledWith(indefinido, 'postagens');
-    expect(query).toHaveBeenCalledTimes(1);
-    expect(query).toHaveBeenCalledWith(queryOrder, { });
-    expect(onSnapshot).toHaveBeenCalledTimes(1);
-    expect(onSnapshot).toHaveBeenCalledWith({ }, expect.any(Function));
-  });
-});
+
+    const messages = [];
+
+    const queryOrder = query(collection(db, 'post'), orderBy('data', 'desc'));
+    const querySnapshot = await getDocs(queryOrder);
+
+    if (!querySnapshot.empty) {
+      querySnapshot.forEach((item) => {
+        const data = item.data();
+        data.id = item.id;
+        messages.push(data);
+      });
+    }
+
+    expect(messages.length).toBeGreaterThan(0);

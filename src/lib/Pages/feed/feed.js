@@ -42,12 +42,12 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
-        <div class="postado">
+       <div class="postado">
                   <div class="position-username-data">
                   <p class="user-name">${post.username}</p>
                   </div>
                   </div>
-                  <textarea disabled name="" class="txt-area-postado" id="txt-area-postado-${post.id}" cols='40' rows='5'>${post.post}</textarea>
+                  <textarea disabled name="" id="txt-area-postado-${post.id}" cols="35" rows="4">${post.post}</textarea>
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
                   ${post.idUser === auth.currentUser.uid ? `
