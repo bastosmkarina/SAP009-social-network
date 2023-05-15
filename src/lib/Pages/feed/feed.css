@@ -65,6 +65,7 @@
   margin-right: 111px;
 }
 
+
 @media (min-width: 1200px) {
 
   .header-feed  {
@@ -122,6 +123,7 @@
   .texto-comunidade {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 375px;
   }
   
   .texto-compartilhe {
@@ -130,8 +132,8 @@
   }
   
   .caixa-publicar {
-    margin-right: 10px;
     align-items: center;
+    margin-left: 900px;
   }
   
   .publicar-botao {
@@ -139,17 +141,14 @@
   }
 
   .postagens {
-    width: 300px;
     margin: 0 auto;
-    margin-bottom: 10px;
   }
   
   .areaPostado {
     border: 1px solid #ccc;
     background-color: #d9ebfa;
-    width: 40vw;
+    width: 30vw;
     margin-bottom: 10px;
-    padding: 10px;
   }
   
   .txt-area-postado {
