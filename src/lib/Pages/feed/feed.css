@@ -105,8 +105,6 @@
   }
 
   .airfryerfeed {
-    display: none;
-    vertical-align: middle;
     margin-left: -80px;
     margin-top: 50px;
     margin-right: 200px;
@@ -133,8 +131,6 @@
   
   .caixa-publicar {
     margin-right: 10px;
-    margin: 0 auto;
-  
     align-items: center;
   }
   
@@ -165,10 +161,16 @@
   
   .fa-regular.fa-pen-to-square {
     margin-right: 110px;
+    cursor: pointer;
   }
   
   .fa-regular.fa-trash-can {
     margin-right: 111px;
+    cursor: pointer;
+  }
+
+  .fa-regular.fa-floppy-disk {
+    cursor: pointer;
   }
   
 }
