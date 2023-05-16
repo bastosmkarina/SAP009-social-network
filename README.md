@@ -4,8 +4,9 @@
 * [1. Prefácio](#1-prefácio)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
 * [3. Definição do Produto](#3-definição-do-Produto)
-* [4. História do Usuário](#4-Protótipo-de-alta-fidelidade)
-* [5. Testes Umitários](#5-Testes-Unitários)
+* [4. História do Usuário](#4-historias-de-usuario)
+* [4.1 Protótipos](#4-Protótipos)
+* [5. Testes Unitários](#5-Testes-Unitários)
 * [6.Checklist de objetivos alcançados ](#6-Checklist-de-objetivos-alcançados)
 
 
@@ -56,7 +57,7 @@ Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a f
 
 <img src='src/images/readme/historiausuario.jpg'>
 
-### 4.1 Protótipo de Alta Fidelidade
+### 4.1 Protótipos
 
 <img src='src/images/readme/Protótipo1.jpg'>
 <img src='src/images/readme/Protótipo2.jpg'>
