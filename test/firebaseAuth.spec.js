@@ -14,6 +14,7 @@ import {
   updateDoc,
   doc,
   deleteDoc,
+  getDocs,
   db,
 }
   from 'firebase/firestore';
@@ -82,16 +83,16 @@ describe('criarUsuario', () => {
     updateProfile.mockResolvedValueOnce();
 
     const nomeCompleto = 'nomecompletoteste';
-    const Apelido = 'apelidoteste';
+    // const Apelido = 'apelidoteste';
     const email = 'emailteste@email.com';
     const senha = 'senhateste';
-    await criarUsuario(nomeCompleto, Apelido, email, senha);
+    await criarUsuario(nomeCompleto, email, senha);
 
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, senha);
     expect(updateProfile).toHaveBeenCalledTimes(1);
     expect(updateProfile).toHaveBeenCalledWith(mockUserCredential.user, {
-      nomeCompleto, Apelido, email, senha,
+      nomeCompleto,
     });
   });
 });
@@ -162,19 +163,8 @@ describe('accessPost', () => {
   });
 
   it('deve acessar a publicação criada', async () => {
-    const messages = [];
-
-    const queryOrder = query(collection(db, 'post'), orderBy('data', 'desc'));
-    const querySnapshot = await getDocs(queryOrder);
-
-    if (!querySnapshot.empty) {
-      querySnapshot.forEach((item) => {
-        const data = item.data();
-        data.id = item.id;
-        messages.push(data);
-      });
-    }
-
-    expect(messages.length).toBeGreaterThan(0);
+    getDocs.mockReturnValueOnce([]);
+    await accessPost();
+    expect(query).toHaveBeenCalledTimes(1);
   });
 });

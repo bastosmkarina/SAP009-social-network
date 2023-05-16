@@ -42,7 +42,7 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
-        <div class="postado">
+       <div class="postado">
                   <div class="position-username-data">
                   <p class="user-name">${post.username}</p>
                   </div>
