@@ -3,10 +3,10 @@
 
 * [1. Prefácio](#1-prefácio)
 * [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Definição do Produto](#3-definição-do-Produto)
-* [4. História do Usuário](#4-Protótipo-de-alta-fidelidade)
-* [5. Testes Umitários](#5-Testes-Unitários)
-* [6.Checklist de objetivos alcançados ](#6-Checklist-de-objetivos-alcançados)
+* [3. Definição do Produto](#3-definição-do-produto)
+* [4. História do Usuário](#4-historias-de-usuario)
+* [5. Testes Unitários](#5-Testes-Unitários)
+* [6. Checklist de objetivos alcançados ](#6-Checklist-de-objetivos-alcançados)
 
 
 
@@ -50,71 +50,46 @@ Funcionalidades:
 
 
 Foi realizada uma pesquisa com 40 possíveis usuários para identificarmos pontos em comum do nosso público-alvo. 
-Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a fritadeira elétrica( Air Fryer), dentre eles 94% se interessam por dicas de receitas e os lugares de busca por essas receitas, empatados em 75% foram sites especializados e redes sociais, sendo assim seguimos com a ideia de projeto criar uma aplicação onde o usuário tivesse a própria rede social para encontrar receitas específicas de air fryer, aliando com um estilo nostálgico que lembrasse uma antiga rede social de comunidades, como foi o Orkut.  
-<img src="src/images/readme/pesquisausuario.png">
-<img src="src/images/readme/interesse.png">
+Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a fritadeira elétrica( Air Fryer), dentre eles 94% se interessam por dicas de receitas e os lugares de busca por essas receitas, empatados em 75% foram sites especializados e redes sociais, sendo assim seguimos com a ideia de projeto criar uma aplicação onde o usuário tivesse a própria rede social para encontrar receitas específicas de air fryer, aliando com um estilo nostálgico que lembrasse uma antiga rede social de comunidades, como foi o Orkut. 
 
+<img src='src/images/readme/pesquisausuario.png'>
 
 ### 4.0 Histórias de usuário
 
-imagem  1
+<img src='src/images/readme/historiausuario.jpg'>
 
+### 4.1 Protótipos
 
-
-
-
-IMAGEM 2
-
-
-
-
-
-
-
-
-IMAGEM 3
-
-
-
-  
-### 4.1 Protótipo de Alta Fidelidade
-
-
-
-
-
-
-
-
-
+<img src='src/images/readme/Protótipo1.jpg'>
+<img src='src/images/readme/Protótipo2.jpg'>
+<img src='src/images/readme/login.png'>
+<img src='src/images/readme/cadastro.png'>
+<img src='src/images/readme/feed.png'>
 
 ### 5.0 Testes unitários
 
+<img src='src/images/readme/testes.jpg'>
 
+### 6.0 Checklist de objetivos alcançados 
+⭕ Usar VanillaJS.
 
+⭕ UI: É responsivo.
 
+⭕ Passa pelo linter.
 
+⭕ Passa pelos testes (npm test).
 
-### 6.0 Checklist de objetivos alcançados 🏆
-1- Usar VanillaJS.
+⭕ Ser uma Single Pages Application (SPA).
 
-2- UI: É responsivo.
+⭕ Inclui histórias de usuário no README.md.
 
-3- Passa pelo linter.
+⭕ Autenticação com Firebase e uso do Firestore.
 
-4- Passa pelos testes (npm test).
+⭕ Inclui uma definição de produto clara e informativa no README.md.
 
-5- Ser uma Single Pages Application (SPA).
+⭕ Inclui rascunho da solução (protótipo de alta fidelidade) no README.md.
 
-6- Inclui histórias de usuário no README.md.
+⭕ Atender ao CRUD (Create, Reade, Update and Delete) utilizando o Firebase.
 
-7- Autenticação com Firebase e uso do Firestore.
-
-8- Inclui uma definição de produto clara e informativa no README.md.
-
-9- Inclui rascunho da solução (protótipo de alta fidelidade) no README.md.
-
-10- Atender ao CRUD (Create, Reade, Update and Delete) utilizando o Firebase.
-
-11- Testes unitários cobrem um mínimo de 70% de statements, functions, lines e branches
+⭕ Testes unitários cobrem um mínimo de 70% de statements, functions, lines e branches
 
