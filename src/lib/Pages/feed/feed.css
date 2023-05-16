@@ -65,6 +65,7 @@
   margin-right: 111px;
 }
 
+
 @media (min-width: 1200px) {
 
   .header-feed  {
@@ -105,8 +106,6 @@
   }
 
   .airfryerfeed {
-    display: none;
-    vertical-align: middle;
     margin-left: -80px;
     margin-top: 50px;
     margin-right: 200px;
@@ -124,6 +123,7 @@
   .texto-comunidade {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 375px;
   }
   
   .texto-compartilhe {
@@ -132,12 +132,17 @@
   }
   
   .caixa-publicar {
-    margin-right: 10px;
-    padding: 20px;
     border: 1px solid #ccc;
+    width: 29%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     align-items: center;
+    margin-left: 600px;
+    
+   
   }
   
   .publicar-botao {
@@ -145,7 +150,7 @@
   }
 
   .postagens {
-    width: 300px;
+    width: 29%;
     margin: 0 auto;
     margin-bottom: 10px;
   }
@@ -153,12 +158,12 @@
   .areaPostado {
     border: 1px solid #ccc;
     background-color: #d9ebfa;
-    width: 40vw;
+    width: 30vw;
     margin-bottom: 10px;
-    padding: 10px;
   }
   
   .txt-area-postado {
+    resize: none;
     background-color: #ffffff;
     width: 30vw;
     height: 5vw;
@@ -167,10 +172,21 @@
   
   .fa-regular.fa-pen-to-square {
     margin-right: 110px;
+    cursor: pointer;
   }
   
   .fa-regular.fa-trash-can {
     margin-right: 111px;
+    cursor: pointer;
+  }
+
+  .fa-regular.fa-floppy-disk {
+    cursor: pointer;
+  }
+  #escrever-receita{
+    resize: none;
+    height: 80%;
+    width: 100%;
   }
   
 }

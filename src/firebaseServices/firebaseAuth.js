@@ -19,7 +19,7 @@ export const logingoogle = () => {
 };
 
 // eslint-disable-next-line max-len
-export const criarUsuario = (nomeCompleto, Apelido, email, senha) => createUserWithEmailAndPassword(auth, email, senha)
+export const criarUsuario = (nomeCompleto, email, senha) => createUserWithEmailAndPassword(auth, email, senha)
   .then((userCredential) => {
     const usuario = userCredential.user;
     return updateProfile(usuario, { nomeCompleto });
