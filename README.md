@@ -54,7 +54,7 @@ Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a f
 
 ### 4.0 Histórias de usuário
 
-<img src='src/images/readme/História de usuário.jpg>
+<img src='src/images/readme/historiausuario.jpg>
 
 ### 4.1 Protótipo de Alta Fidelidade
 
