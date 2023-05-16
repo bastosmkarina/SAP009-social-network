@@ -54,7 +54,7 @@ Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a f
 
 ### 4.0 Histórias de usuário
 
-<img src='src/images/readme/historiausuario.jpg>
+<img src='src/images/readme/historiausuario.jpg'>
 
 ### 4.1 Protótipo de Alta Fidelidade
 
@@ -68,26 +68,26 @@ Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a f
 
 <img src='src/images/readme/testes.jpg'>
 
-### 6.0 Checklist de objetivos alcançados 🏆
-1- Usar VanillaJS.
+### 6.0 Checklist de objetivos alcançados 
+⭕ Usar VanillaJS.
 
-2- UI: É responsivo.
+⭕ UI: É responsivo.
 
-3- Passa pelo linter.
+⭕ Passa pelo linter.
 
-4- Passa pelos testes (npm test).
+⭕ Passa pelos testes (npm test).
 
-5- Ser uma Single Pages Application (SPA).
+⭕ Ser uma Single Pages Application (SPA).
 
-6- Inclui histórias de usuário no README.md.
+⭕ Inclui histórias de usuário no README.md.
 
-7- Autenticação com Firebase e uso do Firestore.
+⭕ Autenticação com Firebase e uso do Firestore.
 
-8- Inclui uma definição de produto clara e informativa no README.md.
+⭕ Inclui uma definição de produto clara e informativa no README.md.
 
-9- Inclui rascunho da solução (protótipo de alta fidelidade) no README.md.
+⭕ Inclui rascunho da solução (protótipo de alta fidelidade) no README.md.
 
-10- Atender ao CRUD (Create, Reade, Update and Delete) utilizando o Firebase.
+⭕ Atender ao CRUD (Create, Reade, Update and Delete) utilizando o Firebase.
 
-11- Testes unitários cobrem um mínimo de 70% de statements, functions, lines e branches
+⭕ Testes unitários cobrem um mínimo de 70% de statements, functions, lines e branches
 
