@@ -1,52 +1,199 @@
 
-.logo {
-  width: 120px;
-  
+.titulo-feed {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
-.menu-hamburguer {
-  display: flex;
-  flex-direction: column;
-  width: 30px;
-  height: 200px;
-  margin-left: 200px;
-  margin-top: -130px;
+.membros {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-
-.menu-hamburguer a {
-  color:rgb(238, 160, 240);
-  width: 100%;
-  height: 2px;
-  
+.texto-comunidade {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.menu-hamburguer i {
-  color:rgb(238, 160, 240);
-  width: 100%;
-  height: 2px;
-  margin-top: -30px;
-  margin-left: 60px;
+.texto-compartilhe {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.caixa-publicar {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.publicar-botao {
+  margin-top: 20px;
+}
+
+.airfryerfeed {
+  display: none;
 }
 
 .postagens {
-  width: 150px;
-  height: 50px;
-  background-color: #f7f7f7;
-  border: 1px solid #000000;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.areaPostado {
+  border: 1px solid #ccc;
+  background-color: #d9ebfa;
+  margin-bottom: 10px;
   padding: 10px;
+}
+
+.txt-area-postado {
+  background-color: #ffffff;
+  width: 67vw;
+  height: 20vw;
   font-size: 16px;
 }
 
-.fa-regular {
-  margin-right: 30px;
-  margin-left: 15px;
+.fa-regular.fa-pen-to-square {
+  margin-right: 110px;
 }
 
-.span {
-  color: rgb(238, 160, 240);
-
+.fa-regular.fa-trash-can {
+  margin-right: 111px;
 }
+
+
+@media (min-width: 1200px) {
+
+  .header-feed  {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+  }
+
+  .titulo-header-desktop {
+    color: #F84ADC;
+    margin-left: 30px;
+    font-size: 100px;
+    font-weight: bolder;
+  }
+
+  .sair {
+    margin-right: 20px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 20px;
+    background-color: #d1e5f7;
+    color: rgb(7, 6, 6);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Roboto", Arial, sans-serif;
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .logo-mobile {
+    display: none;
+  }
+
+  .airfryerfeed {
+    margin-left: -80px;
+    margin-top: 50px;
+    margin-right: 200px;
+  }
+
+  .titulo-feed {
+    margin-bottom: 10px;
+  }
+  
+  .membros {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .texto-comunidade {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 375px;
+  }
+  
+  .texto-compartilhe {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .caixa-publicar {
+    border: 1px solid #ccc;
+    width: 29%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    margin-left: 600px;
+    
+   
+  }
+  
+  .publicar-botao {
+    margin-top: 20px;
+  }
+
+  .postagens {
+    width: 29%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  
+  .areaPostado {
+    border: 1px solid #ccc;
+    background-color: #d9ebfa;
+    width: 30vw;
+    margin-bottom: 10px;
+  }
+  
+  .txt-area-postado {
+    resize: none;
+    background-color: #ffffff;
+    width: 30vw;
+    height: 5vw;
+    font-size: 16px;
+  }
+  
+  .fa-regular.fa-pen-to-square {
+    margin-right: 110px;
+    cursor: pointer;
+  }
+  
+  .fa-regular.fa-trash-can {
+    margin-right: 111px;
+    cursor: pointer;
+  }
+
+  .fa-regular.fa-floppy-disk {
+    cursor: pointer;
+  }
+  #escrever-receita{
+    resize: none;
+    height: 80%;
+    width: 100%;
+  }
+  
+}
+
+
+
+
 
 
 

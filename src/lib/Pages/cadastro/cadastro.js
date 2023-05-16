@@ -1,29 +1,33 @@
+/* eslint-disable no-alert */
 import { criarUsuario } from '../../../firebaseServices/firebaseAuth';
+import logomobile from '../../../images/logo/logomobile.png';
+import logodesktop from '../../../images/logo/logodesktop.png';
 
 export default () => {
   const container = document.createElement('div');
   const template = `  
-      <section>   
-    
-      <h2>Cadastro</h2> 
-      <div>
-       <form class='cadastrar'> 
-     <label for='Nome Completo'>  
-     <input type='text' id='Nome-Completo' placeholder='Nome Completo'>  
-     </label>  
-     <label for='apelido'>  
-    <input type='text' id='Apelido' placeholder='Apelido'> 
-      </label> 
-      <label for='email'>  
-    <input type='email' id='email' placeholder='Email'> 
-     </label>  
-     <label for='senha'> 
-     <input type='password' id='senha' placeholder='Senha'> 
-     </label>  
-     </div>
-    <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
-    <span class='txt-error hide' id='txtError'></span>
-    </form>    `;
+
+  <header>
+  <img class='logo-mobile' src='${logomobile}' alt=''>
+  <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
+  <p class='frase2-login'>para Air Fryer</p>
+  </header>
+
+  <section class='pagina-cadastro'>
+  <img class='logo-desktop' src='${logodesktop}' alt=''>
+
+     <form class='formulario-cadastro'> 
+     <p class='nome-formulario-cadastro'>Cadastro</p> 
+     <input type='text' id='Nome-Completo' placeholder='Nome Completo'>
+     <input type='text' id='Apelido' placeholder='Apelido'> 
+     <input type='email' id='email' placeholder='Email'> 
+     <input type='password' id='senha' placeholder='Senha'>
+     <button type='submit' value='submit2' id='confirmar'>Confirmar</button>  
+     <span class='txt-error hide' id='txtError'></span>
+     </form> 
+     </section> 
+     `;
+
   container.innerHTML = template;
   function errorMessage(error) {
     if (error.code === 'auth/email-already-exists') {
@@ -37,18 +41,19 @@ export default () => {
   }
 
   const cadastro = container.querySelector('#confirmar');
-  cadastro.addEventListener('click', () => {
+  cadastro.addEventListener('click', (event) => {
+    event.preventDefault();
     const nomeCompleto = container.querySelector('#Nome-Completo');
     const apelido = container.querySelector('#Apelido');
     const email = container.querySelector('#email');
     const senha = container.querySelector('#senha');
-    if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
+    if (nomeCompleto.value === '' || apelido.value === '' || email.value === '' || senha.value === '') {
       alert('Por favor, preencha todos os campos.');
     } else {
-      criarUsuario(email.value, senha.value, nomeCompleto.value, apelido.value)
+      criarUsuario(nomeCompleto.value, apelido.value, email.value, senha.value)
         .then(() => {
           alert('Cadastro realizado com sucesso!');
-          window.location.hash = '#login';
+          window.location.hash = '#feed';
         })
         .catch((error) => {
           const mensagem = container.querySelector('#txtError');
@@ -59,27 +64,3 @@ export default () => {
 
   return container;
 };
-
-// const cadastro = container.querySelector('#confirmar');
-  //cadastro.addEventListener('click', () => {
-   // const nomeCompleto = container.querySelector('#Nome-Completo');
-   // const apelido = container.querySelector('#Apelido');
-   // const email = container.querySelector('#email');
-   // const senha = container.querySelector('#senha');
-   // if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
-     // alert('Por favor, preencha todos os campos.');
-    //} else {
-      //criarUsuario(email.value, senha.value, nomeCompleto.value, apelido.value)
-       // .then(() => {
-          // eslint-disable-next-line no-alert
-        //  alert('Cadastro realizado com sucesso!');
-         // window.location.hash = '#login';
-       // })
-       // .catch((error) => {
-        //  const mensagem = container.querySelector('#txtError');
-         // mensagem.innerHTML = errorMessage(error);
-       // });
-    //}
-  //});
-
-  //return container;};
