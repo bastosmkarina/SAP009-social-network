@@ -133,7 +133,8 @@
   
   .caixa-publicar {
     border: 1px solid #ccc;
-    width: 29vw;
+    width: 29%;
+    margin: 0 auto;
     margin-bottom: 10px;
     padding: 20px;
     border-radius: 5px;
@@ -149,7 +150,9 @@
   }
 
   .postagens {
+    width: 29%;
     margin: 0 auto;
+    margin-bottom: 10px;
   }
   
   .areaPostado {
@@ -160,6 +163,7 @@
   }
   
   .txt-area-postado {
+    resize: none;
     background-color: #ffffff;
     width: 30vw;
     height: 5vw;
@@ -178,6 +182,11 @@
 
   .fa-regular.fa-floppy-disk {
     cursor: pointer;
+  }
+  #escrever-receita{
+    resize: none;
+    height: 80%;
+    width: 100%;
   }
   
 }
