@@ -51,49 +51,22 @@ Funcionalidades:
 
 Foi realizada uma pesquisa com 40 possíveis usuários para identificarmos pontos em comum do nosso público-alvo. 
 Notamos que o utensílio mais utilizado, por 52% das pessoas pesquisadas foi a fritadeira elétrica( Air Fryer), dentre eles 94% se interessam por dicas de receitas e os lugares de busca por essas receitas, empatados em 75% foram sites especializados e redes sociais, sendo assim seguimos com a ideia de projeto criar uma aplicação onde o usuário tivesse a própria rede social para encontrar receitas específicas de air fryer, aliando com um estilo nostálgico que lembrasse uma antiga rede social de comunidades, como foi o Orkut.  
-<img src="src/images/readme/pesquisausuario.png">
-<img src="src/images/readme/interesse.png">
-
 
 ### 4.0 Histórias de usuário
 
-imagem  1
+<img src='src/images/readme/História de usuário.jpg>
 
-
-
-
-
-IMAGEM 2
-
-
-
-
-
-
-
-
-IMAGEM 3
-
-
-
-  
 ### 4.1 Protótipo de Alta Fidelidade
 
-
-
-
-
-
-
-
-
+<img src='src/images/readme/Protótipo1.jpg'>
+<img src='src/images/readme/Protótipo2.jpg'>
+<img src='src/images/readme/login.png'>
+<img src='src/images/readme/cadastro.png'>
+<img src='src/images/readme/feed.png'>
 
 ### 5.0 Testes unitários
 
-
-
-
-
+<img src='src/images/readme/testes.jpg'>
 
 ### 6.0 Checklist de objetivos alcançados 🏆
 1- Usar VanillaJS.
