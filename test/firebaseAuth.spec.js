@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import {
   createUserWithEmailAndPassword,
   updateProfile,
@@ -8,12 +9,23 @@ import {
 import {
   addDoc,
   collection,
-} from 'firebase/firestore';
+  query,
+  // orderBy,
+  updateDoc,
+  doc,
+  deleteDoc,
+  getDocs,
+  db,
+}
+  from 'firebase/firestore';
 import {
   auth, criarUsuario, login, logingoogle,
 } from '../src/firebaseServices/firebaseAuth';
 import {
+  editPost,
   newPost,
+  deletePost,
+  accessPost,
 } from '../src/firebaseServices/fireStore';
 
 jest.mock('firebase/auth');
@@ -60,7 +72,7 @@ describe('logingoogle', () => {
 
 describe('criarUsuario', () => {
   it('deve ser uma função', () => {
-    expect(typeof login).toBe('function');
+    expect(typeof criarUsuario).toBe('function');
   });
 
   it('deve criar usuario e atualizar perfil com sucesso', async () => {
@@ -71,16 +83,16 @@ describe('criarUsuario', () => {
     updateProfile.mockResolvedValueOnce();
 
     const nomeCompleto = 'nomecompletoteste';
-    const Apelido = 'apelidoteste';
+    // const Apelido = 'apelidoteste';
     const email = 'emailteste@email.com';
     const senha = 'senhateste';
-    await criarUsuario(nomeCompleto, Apelido, email, senha);
+    await criarUsuario(nomeCompleto, email, senha);
 
     expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1);
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, senha);
     expect(updateProfile).toHaveBeenCalledTimes(1);
     expect(updateProfile).toHaveBeenCalledWith(mockUserCredential.user, {
-      nomeCompleto, Apelido,
+      nomeCompleto,
     });
   });
 });
@@ -108,5 +120,51 @@ describe('newPost', () => {
       idUser: id,
       username,
     });
+  });
+});
+describe('editPost', () => {
+  it('should be a function', () => {
+    expect(typeof editPost).toBe('function');
+  });
+
+  it('deve editar e atualizar a publicação', async () => {
+    updateDoc.mockResolvedValue();
+    const mockDoc = 'doc';
+    doc.mockReturnValueOnce(mockDoc);
+    const edicaoPost = 'post';
+    const salvarPostagem = 'post';
+    const atualizarPostagem = {
+      post: salvarPostagem,
+    };
+
+    await editPost(edicaoPost, salvarPostagem);
+
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'post', salvarPostagem);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(mockDoc, atualizarPostagem);
+  });
+});
+
+describe('deletePost', () => {
+  it('deve excluir o post', async () => {
+    const mockDoc = 'doc';
+    doc.mockReturnValueOnce(mockDoc);
+    const postId = 'postId';
+    await deletePost(postId);
+    expect(doc).toHaveBeenCalledWith(db, 'post', postId);
+    expect(doc).toHaveBeenCalledTimes(2);
+    expect(deleteDoc).toHaveBeenCalledWith(mockDoc);
+  });
+});
+describe('accessPost', () => {
+  it('deve ser uma função', () => {
+    expect(typeof accessPost).toBe('function');
+  });
+
+  it('deve acessar a publicação criada', async () => {
+    getDocs.mockReturnValueOnce([]);
+    await accessPost();
+    expect(query).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,6 +1,8 @@
+
 .titulo-feed {
   text-align: center;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .membros {
@@ -23,7 +25,7 @@
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -31,55 +33,42 @@
   margin-top: 20px;
 }
 
-.apelido {
-  margin-left: 40px;
-  margin-top: 20px;
-}
-
 .airfryerfeed {
   display: none;
 }
 
-.post-container {
+.postagens {
   width: 300px;
   margin: 0 auto;
-  background-color: #ffffff;
-  border: 1px solid black;
-  padding: 10px;
   margin-bottom: 10px;
 }
 
-#editar {
-  margin-left: 150px;
+.areaPostado {
+  border: 1px solid #ccc;
+  background-color: #d9ebfa;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
-#deletar {
-  margin-left: 100px;
+.txt-area-postado {
+  background-color: #ffffff;
+  width: 67vw;
+  height: 20vw;
+  font-size: 16px;
 }
 
-.titulo-header-desktop {
+.fa-regular.fa-pen-to-square {
+  margin-right: 110px;
 }
 
-.sair {
-  
-  background-color: #d1e5f7;
-  color: rgb(7, 6, 6);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: "Roboto", Arial, sans-serif;
-  font-style: normal;
-  font-size: medium;
-  font-weight: bold;
-  display: block;
-  margin: 0 auto;
-  text-align: center;
+.fa-regular.fa-trash-can {
+  margin-right: 111px;
 }
 
-@media (min-width: 900px) {
 
-  header {
+@media (min-width: 1200px) {
+
+  .header-feed  {
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -115,14 +104,13 @@
   .logo-mobile {
     display: none;
   }
- 
+
   .airfryerfeed {
-    display: none;
-    vertical-align: middle;
     margin-left: -80px;
     margin-top: 50px;
-    margin-right: 200px
+    margin-right: 200px;
   }
+
   .titulo-feed {
     margin-bottom: 10px;
   }
@@ -135,6 +123,7 @@
   .texto-comunidade {
     text-align: center;
     margin-bottom: 20px;
+    margin-left: 375px;
   }
   
   .texto-compartilhe {
@@ -143,32 +132,68 @@
   }
   
   .caixa-publicar {
-    display: inline-block;
-    vertical-align: middle;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
     border: 1px solid #ccc;
+    width: 29%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 20px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
     align-items: center;
-
+    margin-left: 600px;
+    
+   
   }
   
   .publicar-botao {
     margin-top: 20px;
   }
-  
-  .apelido {
-    margin-left: 40px;
-    margin-top: 20px;
+
+  .postagens {
+    width: 29%;
+    margin: 0 auto;
+    margin-bottom: 10px;
   }
   
-  .fa-regular {
-    margin-right: 80px;
-    margin-left: 40px;
+  .areaPostado {
+    border: 1px solid #ccc;
+    background-color: #d9ebfa;
+    width: 30vw;
+    margin-bottom: 10px;
   }
+  
+  .txt-area-postado {
+    resize: none;
+    background-color: #ffffff;
+    width: 30vw;
+    height: 5vw;
+    font-size: 16px;
+  }
+  
+  .fa-regular.fa-pen-to-square {
+    margin-right: 110px;
+    cursor: pointer;
+  }
+  
+  .fa-regular.fa-trash-can {
+    margin-right: 111px;
+    cursor: pointer;
+  }
+
+  .fa-regular.fa-floppy-disk {
+    cursor: pointer;
+  }
+  #escrever-receita{
+    resize: none;
+    height: 80%;
+    width: 100%;
+  }
+  
 }
+
+
+
+
 
 
 

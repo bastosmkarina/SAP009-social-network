@@ -47,10 +47,10 @@ export default () => {
     const apelido = container.querySelector('#Apelido');
     const email = container.querySelector('#email');
     const senha = container.querySelector('#senha');
-    if (apelido.value === '' || nomeCompleto.value === '' || email.value === '' || senha.value === '') {
+    if (nomeCompleto.value === '' || apelido.value === '' || email.value === '' || senha.value === '') {
       alert('Por favor, preencha todos os campos.');
     } else {
-      criarUsuario(nomeCompleto.value, apelido.value, email.value, senha.value)
+      criarUsuario(nomeCompleto.value, email.value, senha.value)
         .then(() => {
           alert('Cadastro realizado com sucesso!');
           window.location.hash = '#feed';

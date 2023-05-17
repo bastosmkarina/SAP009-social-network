@@ -14,14 +14,13 @@ export default () => {
   const container = document.createElement('div');
   const template = `
 
-  <header>
+  <header class='header-feed'>
   <img class='logo-mobile' src='${logomobile}' alt=''>
   <p class='frase1-login'> Sua comunidade de trocas de receitas </p>
   <p class='frase2-login'>para Air Fryer</p>
   <p class='titulo-header-desktop'>iorkut</p>
-  <a href="#login" class="sair">Sair</a>
+  <button> <a href="#login" class="sair">Sair</a></button>
   </header>
-
 
   <p class='titulo-feed'>Eu amo a minha Air Fryer!</p>
   <p class='membros'>(10.371 membros)<p/>
@@ -33,9 +32,8 @@ export default () => {
   <p class='texto-compartilhe'>Compatilhe e tenha acesso as mais variadas receitas</p> 
   <textarea id='escrever-receita' name='publicar' rows='5' cols='40' placeholder='Publique aqui sua receita'></textarea> 
   <button type='submit' class='publicar-botao' id='publicar-botao'> Publicar </button>
+  </section>
   <section class='postagens'></section>
-  </section>
-  </section>
   `;
 
   container.innerHTML = template;
@@ -44,48 +42,29 @@ export default () => {
     const arrayPosts = await accessPost();
     const postList = arrayPosts.map((post) => `
       <section class="areaPostado" id="post-${post.id}">
-      ${console.log(post.id)}
-        <div class="postado">
-        <ul>
-        <li>
-                  <div class='li'> 
+       <div class="postado">
                   <div class="position-username-data">
-                  <div class="position-user-name">
-        
                   <p class="user-name">${post.username}</p>
                   </div>
                   </div>
-                  <textarea disabled name="" id="txt-area-postado-${post.id}" cols="70" rows="5">${post.post}</textarea>
-                  ${console.log(post.post)}
+                  <textarea disabled name="" class="txt-area-postado" id="txt-area-postado-${post.id}" cols='40' rows='5'>${post.post}</textarea>
                   <div class="position-btn-postar">
                   <p class ="dataPost">${post.data}</p>
                   ${post.idUser === auth.currentUser.uid ? `
-                  <button id="editar-${post.id}" class="btn-postar editado">
-                  <i id='editar' class='fa-regular fa-pen-to-square'></i>
-                  </button>
-                  <button id="salvar-${post.id}" class="btn-postar editado">salvar</button>
-                  <button id="deletar-${post.id}" class="btn-postar delete">deletar
-                  </button>` : ''}
-                      </div>
-                     </div>
-                  </li>
-                  </ul>
-          </div>
+                  <i id='editar-${post.id}' class='fa-regular fa-pen-to-square'></i>
+                  <i id='deletar-${post.id}' class='fa-regular fa-trash-can'></i>
+                  <i id='salvar-${post.id}' class="fa-regular fa-floppy-disk"></i>
+                  ` : ''}
+                  </div>
       </section>     
     `).join('');
 
-    console.log('passei por aqui');
     container.querySelector('.postagens').innerHTML = postList;
 
     arrayPosts.forEach((post) => {
-      console.log('passei por aqui');
-      console.log(post.idUser);
       if (post.idUser === auth.currentUser.uid) {
-        console.log('entrou');
         const btnDeletar = container.querySelector(`#deletar-${post.id}`);
-        console.log(btnDeletar);
         btnDeletar.addEventListener('click', (e) => {
-          console.log('botao deletar');
           e.preventDefault();
           if (window.confirm('Tem certeza de que deseja excluir a publicação?')) {
             deletePost(post.id)
@@ -125,7 +104,7 @@ export default () => {
   const btnPublicar = container.querySelector('#publicar-botao');
   btnPublicar.addEventListener('click', () => {
     if (textArea.value !== '') {
-      const today = new Date();
+      const today = new Date().toLocaleDateString();
       const username = auth.currentUser.displayName;
       const idUser = auth.currentUser.uid;
 
